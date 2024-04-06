@@ -8,6 +8,6 @@ main controller in same package. Do the same with for service and repository
 as well.
 4. only use domains in the service classes and repository interfaces. other 
 than that use dto. and from controller to service map domain and dto. 
-5. For common utilities that could be used acrossed features use the utility 
+5. For common utilities that could be used across features use the utility 
 package. 
 6. Implement swagger documentation.
