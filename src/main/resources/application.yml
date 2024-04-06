@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ehr-plugin
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ehr_database
+    username: ehr_user
+    password: ehr_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+logging:
+  level:
+    org.springframework.web: DEBUG
+server:
+  port: 8080
