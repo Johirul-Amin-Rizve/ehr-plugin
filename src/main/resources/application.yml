@@ -25,3 +25,7 @@ cors:
   allowed-headers: "Content-Type, Authorization"
   allow-credentials: true
   max-age: 3600
+auth:
+  api:
+    url: https://sandbox.elationemr.com/api/2.0/oauth2/token/
+    authorizationHeader: Basic dGlsYTJGeU1vMnFTbGR3RkNOYnNxQnNYSmZVODFTOGdWQmRSM1NjRjo4VVlmMWdaOEtQeURoRjZieFlCVWRnd2pPQVRwZnVzSmt0b0RsOE11T3BJMGVwY0ZSVjlBNm1kT0ZNY2MxeThWS3VBNGRESUExbGhYc3A3dVVuZlpaN1dXYjA4R2VDWlJnMWFydFdqV0c4SVdDaFB3ZmIwT0lYRzB3Z2tvMUpsNw==
