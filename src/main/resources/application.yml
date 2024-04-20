@@ -27,5 +27,5 @@ cors:
   max-age: 3600
 auth:
   api:
-    url: https://sandbox.elationemr.com/api/2.0/oauth2/token/
-    authorizationHeader:
+    url: ${AUTH_API_URL}
+    authorizationHeader: ${AUTHORIZATION_HEADER}
