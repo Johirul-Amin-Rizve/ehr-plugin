@@ -25,7 +25,6 @@ cors:
   allowed-headers: "Content-Type, Authorization"
   allow-credentials: true
   max-age: 3600
+
 auth:
-  api:
-    url: ${AUTH_API_URL}
-    authorizationHeader: ${AUTHORIZATION_HEADER}
+  url: https://sandbox.elationemr.com/api/2.0/oauth2/token/

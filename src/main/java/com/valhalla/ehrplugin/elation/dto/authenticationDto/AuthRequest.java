@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class AuthRequest {
-    private String username;
-    private String password;
+    private int physicianId;
+    private int practiceId;
 }
 

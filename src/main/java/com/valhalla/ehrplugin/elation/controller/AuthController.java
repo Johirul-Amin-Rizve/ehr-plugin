@@ -1,7 +1,6 @@
 package com.valhalla.ehrplugin.elation.controller;
 
 import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest;
-import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthResponse;
 import com.valhalla.ehrplugin.elation.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,13 +22,13 @@ public class AuthController {
     }
 
     @PostMapping("/authenticate")
-    public AuthResponse authenticate(@RequestBody AuthRequest request) {
-        LOGGER.info("Received authentication request for username: {}", request.getUsername());
-        AuthResponse response = authService.authenticate(request.getUsername(), request.getPassword());
+    public Object authenticate(@RequestBody AuthRequest request) {
+        LOGGER.info("Received authentication request: {}", request);
+        Object response = authService.authenticate(request);
         if (response != null) {
-            LOGGER.info("Authentication successful for username: {}", request.getUsername());
+            LOGGER.info("Authentication successful for request: {}", request);
         } else {
-            LOGGER.warn("Authentication failed for username: {}", request.getUsername());
+            LOGGER.warn("Authentication failed for request: {}", request);
         }
         return response;
     }

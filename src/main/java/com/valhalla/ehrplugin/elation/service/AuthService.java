@@ -1,7 +1,7 @@
 package com.valhalla.ehrplugin.elation.service;
 
-import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthResponse;
+import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest;
 
 public interface AuthService {
-    AuthResponse authenticate(String username, String password);
+    Object authenticate(AuthRequest request);
 }
