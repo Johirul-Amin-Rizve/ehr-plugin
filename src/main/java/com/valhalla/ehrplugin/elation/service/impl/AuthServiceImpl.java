@@ -6,6 +6,7 @@ import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest;
 import com.valhalla.ehrplugin.elation.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ import org.springframework.web.client.RestTemplate;
 public class AuthServiceImpl implements AuthService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImpl.class);
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Value("${elation.api.baseurl}")
     private String baseUrl;
@@ -41,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
 
         try {
-            ResponseEntity<Object> responseEntity = new RestTemplate().postForEntity(baseUrl+ "/oauth2/token/", request, Object.class);
+            ResponseEntity<Object> responseEntity = restTemplate.postForEntity(baseUrl+ "/oauth2/token/", request, Object.class);
 
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
                 LOGGER.info("Authentication successful for username: {}", authentication.getUsername());
