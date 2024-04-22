@@ -18,8 +18,8 @@ public class AuthServiceImpl implements AuthService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImpl.class);
 
-    @Value("${auth.url}")
-    private String authUrl;
+    @Value("${elation.api.baseurl}")
+    private String baseUrl;
 
     @Override
     public Object authenticate(AuthRequest authRequest) {
@@ -41,7 +41,7 @@ public class AuthServiceImpl implements AuthService {
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
 
         try {
-            ResponseEntity<Object> responseEntity = new RestTemplate().postForEntity(authUrl, request, Object.class);
+            ResponseEntity<Object> responseEntity = new RestTemplate().postForEntity(baseUrl+ "/oauth2/token/", request, Object.class);
 
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
                 LOGGER.info("Authentication successful for username: {}", authentication.getUsername());

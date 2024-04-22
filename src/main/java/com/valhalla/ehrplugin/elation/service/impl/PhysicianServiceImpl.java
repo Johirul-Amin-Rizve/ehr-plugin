@@ -1,37 +1,65 @@
 package com.valhalla.ehrplugin.elation.service.impl;
 
-import com.valhalla.ehrplugin.elation.dto.physicianDto.Physician;
 import com.valhalla.ehrplugin.elation.service.PhysicianService;
+import jakarta.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+import java.util.Collections;
 
 @Service
 public class PhysicianServiceImpl implements PhysicianService {
 
-    // Simulated database
-    private static List<Physician> physicians = new ArrayList<>();
+    private static final Logger logger = LoggerFactory.getLogger(PhysicianServiceImpl.class);
 
-    // Sample data initialization (you can replace with your data retrieval logic)
-    static {
-        physicians.add(new Physician(64811630594L, "Gary", "Leung", "1234567890", "G3455", "CA", "MD",
-                "Family Medicine", "", 342, 65540L, true, null));
-        // Add more sample data if needed
-    }
+    @Autowired
+    private RestTemplate restTemplate;
 
-    @Override
-    public List<Physician> getAllPhysicians() {
-        return physicians;
-    }
+    @Autowired
+    private HttpServletRequest request;
+
+    @Value("${elation.api.baseurl}")
+    private String baseUrl;
 
     @Override
-    public Physician getPhysicianById(long id) {
-        for (Physician physician : physicians) {
-            if (physician.getId() == id) {
-                return physician;
+    public Object getAllPhysicians() {
+        String authorizationToken = request.getHeader("Authorization");
+        logger.info("Received request to fetch physicians. Authorization token: {}", authorizationToken);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationToken);
+        headers.set("accept", "application/json");
+
+        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
+
+        try {
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    baseUrl + "/physicians/",
+                    HttpMethod.GET,
+                    requestEntity,
+                    Object.class
+            );
+
+            int statusCodeValue = response.getStatusCodeValue();
+            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
+            logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
+
+            if (statusCode.is2xxSuccessful()) {
+                Object responseBody = response.getBody();
+                logger.info("Retrieved physicians from the API.");
+                return responseBody;
+            } else {
+                logger.error("Failed to retrieve physicians. Response status code: {}", statusCodeValue);
+                return Collections.emptyList();
             }
+        } catch (RestClientException ex) {
+            logger.error("Error occurred while fetching physicians: {}", ex.getMessage(), ex);
+            return Collections.emptyList();
         }
-        return null; // Return null if physician with given ID is not found
     }
 }
-

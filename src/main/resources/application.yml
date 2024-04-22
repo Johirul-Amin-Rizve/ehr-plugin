@@ -14,11 +14,14 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
 logging:
   level:
     org.springframework.web: DEBUG
+
 server:
   port: 8080
+
 cors:
   allowed-origins: "http://example.com"
   allowed-methods: "GET, POST, PUT, DELETE, OPTIONS"
@@ -26,5 +29,7 @@ cors:
   allow-credentials: true
   max-age: 3600
 
-auth:
-  url: https://sandbox.elationemr.com/api/2.0/oauth2/token/
+elation:
+  api:
+    baseurl: "https://sandbox.elationemr.com/api/2.0"
+
