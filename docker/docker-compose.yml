@@ -13,6 +13,12 @@ services:
       POSTGRES_PASSWORD: ehr_password
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - default
 
 volumes:
   postgres_data:
+
+networks:
+  default:
+    driver: bridge
