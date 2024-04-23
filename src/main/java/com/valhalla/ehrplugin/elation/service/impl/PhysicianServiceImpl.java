@@ -55,11 +55,11 @@ public class PhysicianServiceImpl implements PhysicianService {
                 return responseBody;
             } else {
                 logger.error("Failed to retrieve physicians. Response status code: {}", statusCodeValue);
-                return Collections.emptyList();
+                return new Object();
             }
         } catch (RestClientException ex) {
             logger.error("Error occurred while fetching physicians: {}", ex.getMessage(), ex);
-            return Collections.emptyList();
+            return new Object();
         }
     }
 }

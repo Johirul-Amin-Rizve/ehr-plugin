@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class AuthServiceImpl implements AuthService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -48,15 +48,15 @@ public class AuthServiceImpl implements AuthService {
             ResponseEntity<Object> responseEntity = restTemplate.postForEntity(baseUrl+ "/oauth2/token/", request, Object.class);
 
             if (responseEntity.getStatusCode() == HttpStatus.OK) {
-                LOGGER.info("Authentication successful for username: {}", authentication.getUsername());
+                logger.info("Authentication successful for username: {}", authentication.getUsername());
                 return responseEntity.getBody();
             } else {
-                LOGGER.warn("Authentication failed for username: {}", authentication.getUsername());
-                LOGGER.error("Error message: {}", responseEntity.getBody());
+                logger.warn("Authentication failed for username: {}", authentication.getUsername());
+                logger.error("Error message: {}", responseEntity.getBody());
                 return null;
             }
         } catch (Exception e) {
-            LOGGER.error("An unexpected error occurred while authenticating for username: {}. Error message: {}", authentication.getUsername(), e.getMessage(), e);
+            logger.error("An unexpected error occurred while authenticating for username: {}. Error message: {}", authentication.getUsername(), e.getMessage(), e);
             return null;
         }
     }

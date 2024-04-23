@@ -1,17 +1,14 @@
 package com.valhalla.ehrplugin.elation.service;
 
-import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistory;
+import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface PatientHistoryService {
-    List<PatientHistory> getAllPatientHistories();
+    Object getAllPatientHistories();
 
-    Optional<PatientHistory> getPatientHistoryById(Long id);
+    Object createPatientHistory(PatientHistoryRequest patientHistory);
 
-    void createPatientHistory(PatientHistory patientHistory);
-
-    Optional<String> deletePatientHistory(Long id);
+    Object deletePatientHistory(Long id);
 
 }

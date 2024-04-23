@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/elation")
 public class AuthController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     private final AuthService authService;
 
@@ -23,12 +23,12 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     public Object authenticate(@RequestBody AuthRequest request) {
-        LOGGER.info("Received authentication request: {}", request);
+        logger.info("Received authentication request: {}", request);
         Object response = authService.authenticate(request);
         if (response != null) {
-            LOGGER.info("Authentication successful for request: {}", request);
+            logger.info("Authentication successful for request: {}", request);
         } else {
-            LOGGER.warn("Authentication failed for request: {}", request);
+            logger.warn("Authentication failed for request: {}", request);
         }
         return response;
     }
