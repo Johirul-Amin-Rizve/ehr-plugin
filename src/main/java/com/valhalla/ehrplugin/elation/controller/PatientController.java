@@ -1,7 +1,10 @@
 package com.valhalla.ehrplugin.elation.controller;
 
 import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
+import com.valhalla.ehrplugin.elation.dto.patientDto.PatientRequest;
+import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest;
 import com.valhalla.ehrplugin.elation.service.PatientService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -29,11 +32,11 @@ public class PatientController {
     }
 
     @PostMapping("/patients")
-    public ResponseEntity<String> createPatient(@RequestBody Patient patient) {
-        logger.info("Creating a new patient: {}", patient);
-        patientService.createPatient(patient);
-        logger.info("Patient created successfully with ID: {}", patient.getId());
-        return new ResponseEntity<>("Patient created successfully", HttpStatus.CREATED);
+    public ResponseEntity<Object> createPatient(@Valid @RequestBody PatientRequest patientRequest) {
+        logger.info("Creating a new patient: {}", patientRequest);
+        Object result = patientService.createPatient(patientRequest);
+        logger.info("Patient created successfully: {}", patientRequest);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @PatchMapping("/patients/{id}")

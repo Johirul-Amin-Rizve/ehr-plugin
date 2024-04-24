@@ -4,9 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 class Insurance {
     private Long id;
     private Long insurance_company;

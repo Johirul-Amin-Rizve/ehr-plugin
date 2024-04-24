@@ -4,9 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 class PatientStatus {
     private String deceased_date;
     private String inactive_reason;

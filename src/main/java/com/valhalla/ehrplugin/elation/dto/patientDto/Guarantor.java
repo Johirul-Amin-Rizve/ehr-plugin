@@ -4,9 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 class Guarantor {
     private Long id;
     private String address;

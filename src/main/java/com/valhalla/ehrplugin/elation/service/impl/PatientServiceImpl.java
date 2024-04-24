@@ -1,15 +1,17 @@
 package com.valhalla.ehrplugin.elation.service.impl;
 
+import com.valhalla.ehrplugin.elation.dto.patientDto.PatientRequest;
 import com.valhalla.ehrplugin.elation.service.PatientService;
 import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,7 +20,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
 public class PatientServiceImpl implements PatientService {
 
     private static final Logger logger = LoggerFactory.getLogger(PatientService.class);
@@ -80,9 +81,43 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public void createPatient(Patient patient) {
-        logger.info("Creating patient: {}", patient.getFirst_name());
-        patients.add(patient);
+    public Object createPatient(PatientRequest patientRequest) {
+        String authorizationToken = request.getHeader("Authorization");
+        logger.info("Received request to create patient. Authorization token: {}", authorizationToken);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationToken);
+        headers.set("accept", "application/json");
+        headers.set("Content-Type", "application/json");
+
+        HttpEntity<PatientRequest> requestEntity = new HttpEntity<>(patientRequest, headers);
+
+        try {
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    baseUrl + "/patients/",
+                    HttpMethod.POST,
+                    requestEntity,
+                    Object.class
+            );
+
+            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
+            logger.info("Received response from API with status code: {}", statusCode);
+
+            if (statusCode.is2xxSuccessful()) {
+                Object responseBody = response.getBody();
+                logger.info("Patient created successfully.");
+                return responseBody;
+            } else {
+                logger.error("Failed to create patient. Response status code: {}", statusCode);
+                return new Object(); // You may choose to handle this differently
+            }
+        } catch (HttpClientErrorException | HttpServerErrorException ex) {
+            logger.error("Error occurred while creating patient: {}", ex.getMessage(), ex);
+            return new Object(); // You may choose to handle this differently
+        } catch (RestClientException ex) {
+            logger.error("General RestClientException occurred: {}", ex.getMessage(), ex);
+            return new Object(); // You may choose to handle this differently
+        }
     }
 
     @Override

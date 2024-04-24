@@ -4,9 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 class Phone {
     private String phone;
     private String phone_type;

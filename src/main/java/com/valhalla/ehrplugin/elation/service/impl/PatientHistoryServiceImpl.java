@@ -3,7 +3,6 @@ package com.valhalla.ehrplugin.elation.service.impl;
 import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest;
 import com.valhalla.ehrplugin.elation.service.PatientHistoryService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Service
-@Transactional
 public class PatientHistoryServiceImpl implements PatientHistoryService {
 
     private static final Logger logger = LoggerFactory.getLogger(PatientHistoryServiceImpl.class);
