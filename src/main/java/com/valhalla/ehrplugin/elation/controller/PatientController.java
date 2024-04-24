@@ -21,24 +21,11 @@ public class PatientController {
     }
 
     @GetMapping("/patients")
-    public ResponseEntity<List<Patient>> getAllPatients() {
-        logger.info("Fetching all patients");
-        List<Patient> patients = patientService.getAllPatients();
-        logger.info("Retrieved {} patients", patients.size());
-        return new ResponseEntity<>(patients, HttpStatus.OK);
-    }
-
-    @GetMapping("/patients/{id}")
-    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
-        logger.info("Fetching patient with ID: {}", id);
-        Optional<Patient> patientOptional = patientService.getPatientById(id);
-        if (patientOptional.isPresent()) {
-            logger.info("Patient found with ID: {}", id);
-            return new ResponseEntity<>(patientOptional.get(), HttpStatus.OK);
-        } else {
-            logger.warn("Patient not found with ID: {}", id);
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<Object> getAllPatients() {
+        logger.info("Received request to get patient.");
+        Object result = patientService.getAllPatients();
+        logger.info("Retrieved patient successfully.");
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @PostMapping("/patients")

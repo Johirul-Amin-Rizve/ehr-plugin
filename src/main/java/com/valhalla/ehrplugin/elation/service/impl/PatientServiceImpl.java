@@ -2,22 +2,73 @@ package com.valhalla.ehrplugin.elation.service.impl;
 
 import com.valhalla.ehrplugin.elation.service.PatientService;
 import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class PatientServiceImpl implements PatientService {
+
     private static final Logger logger = LoggerFactory.getLogger(PatientService.class);
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
+    private HttpServletRequest request;
+
+    @Value("${elation.api.baseurl}")
+    private String baseUrl;
+
     private static List<Patient> patients = new ArrayList<>();
 
     @Override
-    public List<Patient> getAllPatients() {
-        logger.info("Fetching all patients");
-        return patients;
+    public Object getAllPatients() {
+        String authorizationToken = request.getHeader("Authorization");
+        logger.info("Received request to fetch patients. Authorization token: {}", authorizationToken);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationToken);
+        headers.set("accept", "application/json");
+
+        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
+
+        try {
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    baseUrl + "/patients/",
+                    HttpMethod.GET,
+                    requestEntity,
+                    Object.class
+            );
+
+            int statusCodeValue = response.getStatusCodeValue();
+            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
+            logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
+
+            if (statusCode.is2xxSuccessful()) {
+                Object responseBody = response.getBody();
+                logger.info("Retrieved patients from the API.");
+                return responseBody;
+            } else {
+                logger.error("Failed to retrieve patients. Response status code: {}", statusCodeValue);
+                return new Object();
+            }
+        } catch (RestClientException ex) {
+            logger.error("Error occurred while fetching patients: {}", ex.getMessage(), ex);
+            return new Object();
+        }
     }
 
     @Override

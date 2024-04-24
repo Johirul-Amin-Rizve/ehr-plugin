@@ -21,7 +21,7 @@ public class PatientHistoryController {
     }
 
     @GetMapping("/patient-histories")
-    public ResponseEntity<Object> getPatientHistory() {
+    public ResponseEntity<Object> getAllPatientHistories() {
         logger.info("Received request to get patient history.");
         Object result = patientHistoryService.getAllPatientHistories();
         logger.info("Retrieved patient history successfully.");

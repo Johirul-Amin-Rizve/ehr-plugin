@@ -4,6 +4,7 @@ import com.valhalla.ehrplugin.elation.core.Authentication;
 import com.valhalla.ehrplugin.elation.core.AuthenticationEnum;
 import com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest;
 import com.valhalla.ehrplugin.elation.service.AuthService;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@Transactional
 public class AuthServiceImpl implements AuthService {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthServiceImpl.class);
