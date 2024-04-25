@@ -73,11 +73,43 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Optional<Patient> getPatientById(Long id) {
-        logger.info("Fetching patient with ID: {}", id);
-        return patients.stream()
-                .filter(patient -> patient.getId().equals(id))
-                .findFirst();
+    public Optional<Object> getPatientById(Long id) {
+        String authorizationToken = request.getHeader("Authorization");
+        logger.info("Received request to fetch patient by ID {}. Authorization token: {}", id, authorizationToken);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationToken);
+        headers.set("accept", "application/json");
+
+        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
+
+        try {
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    baseUrl + "/patients/" + id,
+                    HttpMethod.GET,
+                    requestEntity,
+                    Object.class
+            );
+
+            int statusCodeValue = response.getStatusCodeValue();
+            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
+            logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
+
+            if (statusCode.is2xxSuccessful()) {
+                Object responseBody = response.getBody();
+                logger.info("Retrieved patient with ID {} from the API.", id);
+                return Optional.ofNullable(responseBody);
+            } else if (statusCode == HttpStatus.NOT_FOUND) {
+                logger.warn("Patient with ID {} not found.", id);
+                return Optional.empty();
+            } else {
+                logger.error("Failed to retrieve patient with ID {}. Response status code: {}", id, statusCodeValue);
+                return Optional.empty();
+            }
+        } catch (RestClientException ex) {
+            logger.error("Error occurred while fetching patient with ID {}: {}", id, ex.getMessage(), ex);
+            return Optional.empty();
+        }
     }
 
     @Override
@@ -121,55 +153,44 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Optional<String> updatePatient(Long id, Patient updatedPatient) {
-        logger.info("Updating patient with ID: {}", id);
-        for (Patient patient : patients) {
-            if (patient.getId().equals(id)) {
-                // Update patient details
-                patient.setFirst_name(updatedPatient.getFirst_name());
-                patient.setMiddle_name(updatedPatient.getMiddle_name());
-                patient.setLast_name(updatedPatient.getLast_name());
-                patient.setActual_name(updatedPatient.getActual_name());
-                patient.setGender_identity(updatedPatient.getGender_identity());
-                patient.setLegal_gender_marker(updatedPatient.getLegal_gender_marker());
-                patient.setPronouns(updatedPatient.getPronouns());
-                patient.setSex(updatedPatient.getSex());
-                patient.setSexual_orientation(updatedPatient.getSexual_orientation());
-                patient.setPrimary_physician(updatedPatient.getPrimary_physician());
-                patient.setCaregiver_practice(updatedPatient.getCaregiver_practice());
-                patient.setDob(updatedPatient.getDob());
-                patient.setSsn(updatedPatient.getSsn());
-                patient.setRace(updatedPatient.getRace());
-                patient.setPreferred_language(updatedPatient.getPreferred_language());
-                patient.setEthnicity(updatedPatient.getEthnicity());
-                patient.setNotes(updatedPatient.getNotes());
-                patient.setVip(updatedPatient.isVip());
-                patient.setAddress(updatedPatient.getAddress());
-                patient.setPhones(updatedPatient.getPhones());
-                patient.setEmails(updatedPatient.getEmails());
-                patient.setGuarantor(updatedPatient.getGuarantor());
-                patient.setInsurances(updatedPatient.getInsurances());
-                patient.setDeleted_insurances(updatedPatient.getDeleted_insurances());
-                patient.setTags(updatedPatient.getTags());
-                patient.setPatient_status(updatedPatient.getPatient_status());
-                patient.setPreference(updatedPatient.getPreference());
-                patient.setEmergency_contact(updatedPatient.getEmergency_contact());
-                patient.setPrimary_care_provider(updatedPatient.getPrimary_care_provider());
-                patient.setPrimary_care_provider_npi(updatedPatient.getPrimary_care_provider_npi());
-                patient.setPrevious_first_name(updatedPatient.getPrevious_first_name());
-                patient.setPrevious_last_name(updatedPatient.getPrevious_last_name());
-                patient.setPrevious_name(updatedPatient.getPrevious_name());
-                patient.setMaster_patient(updatedPatient.getMaster_patient());
-                patient.setEmployer(updatedPatient.getEmployer());
-                patient.setConsents(updatedPatient.getConsents());
-                patient.setMetadata(updatedPatient.getMetadata());
-                patient.setCreated_date(updatedPatient.getCreated_date());
-                patient.setDeleted_date(updatedPatient.getDeleted_date());
-                patient.setMerged_into_chart(updatedPatient.getMerged_into_chart());
-                return Optional.of("Patient updated successfully");
+    public Object updatePatient(Long id, PatientRequest patientRequest) {
+        String authorizationToken = request.getHeader("Authorization");
+        logger.info("Received request to update patient with ID {}. Authorization token: {}", id, authorizationToken);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationToken);
+        headers.set("Content-Type", "application/json");
+
+        HttpEntity<PatientRequest> requestEntity = new HttpEntity<>(patientRequest, headers);
+
+        try {
+            ResponseEntity<Object> response = restTemplate.exchange(
+                    baseUrl + "/patients/" + id,
+                    HttpMethod.PUT,
+                    requestEntity,
+                    Object.class
+            );
+
+            int statusCodeValue = response.getStatusCodeValue();
+            HttpStatus statusCode = (HttpStatus) response.getStatusCode();
+            logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
+
+            if (statusCode.is2xxSuccessful()) {
+                Object responseBody = response.getBody();
+                logger.info("Patient with ID {} updated successfully.", id);
+                return responseBody;
+            } else if (statusCode == HttpStatus.NOT_FOUND) {
+                logger.error("Patient with ID {} not found.", id);
+                return null;
+            } else {
+                logger.error("Failed to update patient with ID {}. Response status code: {}", id, statusCodeValue);
+                return null;
             }
+        } catch (RestClientException ex) {
+            logger.error("Error occurred while updating patient with ID {}: {}", id, ex.getMessage(), ex);
+            return null;
         }
-        return Optional.empty();
     }
+
 }
 

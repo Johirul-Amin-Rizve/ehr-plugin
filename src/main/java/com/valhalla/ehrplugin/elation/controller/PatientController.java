@@ -1,8 +1,6 @@
 package com.valhalla.ehrplugin.elation.controller;
 
-import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
 import com.valhalla.ehrplugin.elation.dto.patientDto.PatientRequest;
-import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest;
 import com.valhalla.ehrplugin.elation.service.PatientService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -10,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -40,15 +37,21 @@ public class PatientController {
     }
 
     @PatchMapping("/patients/{id}")
-    public ResponseEntity<String> updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
-        logger.info("Updating patient with ID: {}", id);
-        Optional<String> result = patientService.updatePatient(id, updatedPatient);
-        if (result.isPresent()) {
-            logger.info("Patient updated successfully with ID: {}", id);
-            return new ResponseEntity<>(result.get(), HttpStatus.OK);
-        } else {
-            logger.warn("Patient not found with ID: {}", id);
-            return new ResponseEntity<>("Patient not found with ID: " + id, HttpStatus.NOT_FOUND);
+    public ResponseEntity<Object> updatePatient(@PathVariable Long id, @Valid @RequestBody PatientRequest patientRequest) {
+        logger.info("Updating patient with ID {}: {}", id, patientRequest);
+
+        // Check if patient with given ID exists
+        Optional<Object> existingPatient = patientService.getPatientById(id);
+        if (existingPatient.isEmpty()) {
+            logger.error("Patient with ID {} not found", id);
+            return new ResponseEntity<>("Patient not found", HttpStatus.NOT_FOUND);
         }
+
+        // Delegate update operation to the service class
+        Object result = patientService.updatePatient(id, patientRequest);
+        logger.info("Patient with ID {} updated successfully: {}", id, patientRequest);
+
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
 }
