@@ -26,8 +26,3 @@ EXPOSE 8080
 # Command to run your application
 CMD ["java", "-jar", "app.jar"]
 
-
-#Run Command
-#docker build -t ehr-plugin:latest .
-#docker run -p 8080:8080 --network docker_default -e "SPRING_PROFILES_ACTIVE=prod" ehr-plugin:latest
-
