@@ -1,5 +1,5 @@
 # Stage 1: Build Maven project
-FROM maven:3.8.8-eclipse-temurin-21-alpine AS builder
+FROM maven:3.8.8-eclipse-temurin-17-alpine AS builder
 
 WORKDIR /build
 
@@ -13,7 +13,7 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Stage 2: Create the final image
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
@@ -29,5 +29,5 @@ CMD ["java", "-jar", "app.jar"]
 
 #Run Command
 #docker build -t ehr-plugin:latest .
-#docker run -p 8080:8080 --network docker_default ehr-plugin:latest
+#docker run -p 8080:8080 --network docker_default -e "SPRING_PROFILES_ACTIVE=prod" ehr-plugin:latest
 
