@@ -1,5 +1,6 @@
 package com.valhalla.ehrplugin.elation.controller;
 
+import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
 import com.valhalla.ehrplugin.elation.dto.patientDto.PatientRequest;
 import com.valhalla.ehrplugin.elation.service.PatientService;
 import jakarta.validation.Valid;
@@ -37,8 +38,8 @@ public class PatientController {
     }
 
     @PatchMapping("/patients/{id}")
-    public ResponseEntity<Object> updatePatient(@PathVariable Long id, @Valid @RequestBody PatientRequest patientRequest) {
-        logger.info("Updating patient with ID {}: {}", id, patientRequest);
+    public ResponseEntity<Object> updatePatient(@PathVariable Long id, @Valid @RequestBody Patient patient) {
+        logger.info("Updating patient with ID {}: {}", id, patient);
 
         // Check if patient with given ID exists
         Optional<Object> existingPatient = patientService.getPatientById(id);
@@ -48,8 +49,8 @@ public class PatientController {
         }
 
         // Delegate update operation to the service class
-        Object result = patientService.updatePatient(id, patientRequest);
-        logger.info("Patient with ID {} updated successfully: {}", id, patientRequest);
+        Object result = patientService.updatePatient(id, patient);
+        logger.info("Patient with ID {} updated successfully: {}", id, patient);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

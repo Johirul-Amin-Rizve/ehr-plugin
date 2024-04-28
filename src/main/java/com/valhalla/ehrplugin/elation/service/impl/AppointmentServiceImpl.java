@@ -1,9 +1,8 @@
 package com.valhalla.ehrplugin.elation.service.impl;
 
-import com.valhalla.ehrplugin.elation.dto.patientDto.PatientRequest;
-import com.valhalla.ehrplugin.elation.service.PatientService;
-import com.valhalla.ehrplugin.elation.dto.patientDto.Patient;
-import jakarta.servlet.http.HttpServletRequest;
+import com.valhalla.ehrplugin.elation.dto.appointmentDto.Appointment;
+import com.valhalla.ehrplugin.elation.dto.appointmentDto.AppointmentRequest;
+import com.valhalla.ehrplugin.elation.service.AppointmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +10,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Service
-public class PatientServiceImpl implements PatientService {
+public class AppointmentServiceImpl implements AppointmentService {
 
-    private static final Logger logger = LoggerFactory.getLogger(PatientService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppointmentServiceImpl.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -32,9 +31,9 @@ public class PatientServiceImpl implements PatientService {
     private String baseUrl;
 
     @Override
-    public Object getAllPatients() {
+    public Object getAllAppointments() {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to fetch patients. Authorization token: {}", authorizationToken);
+        logger.info("Received request to fetch appointments. Authorization token: {}", authorizationToken);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);
@@ -44,7 +43,7 @@ public class PatientServiceImpl implements PatientService {
 
         try {
             ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/patients/",
+                    baseUrl + "/appointments/",
                     HttpMethod.GET,
                     requestEntity,
                     Object.class
@@ -56,22 +55,22 @@ public class PatientServiceImpl implements PatientService {
 
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
-                logger.info("Retrieved patients from the API.");
+                logger.info("Retrieved appointments from the API.");
                 return responseBody;
             } else {
-                logger.error("Failed to retrieve patients. Response status code: {}", statusCodeValue);
+                logger.error("Failed to retrieve appointments. Response status code: {}", statusCodeValue);
                 return new Object();
             }
         } catch (RestClientException ex) {
-            logger.error("Error occurred while fetching patients: {}", ex.getMessage(), ex);
+            logger.error("Error occurred while fetching appointments: {}", ex.getMessage(), ex);
             return new Object();
         }
     }
 
     @Override
-    public Optional<Object> getPatientById(Long id) {
+    public Optional<Object> getAppointmentById(Long id) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to fetch patient by ID {}. Authorization token: {}", id, authorizationToken);
+        logger.info("Received request to fetch appointment by ID {}. Authorization token: {}", id, authorizationToken);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);
@@ -81,7 +80,7 @@ public class PatientServiceImpl implements PatientService {
 
         try {
             ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/patients/" + id,
+                    baseUrl + "/appointments/" + id,
                     HttpMethod.GET,
                     requestEntity,
                     Object.class
@@ -93,36 +92,36 @@ public class PatientServiceImpl implements PatientService {
 
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
-                logger.info("Retrieved patient with ID {} from the API.", id);
+                logger.info("Retrieved appointment with ID {} from the API.", id);
                 return Optional.ofNullable(responseBody);
             } else if (statusCode == HttpStatus.NOT_FOUND) {
-                logger.warn("Patient with ID {} not found.", id);
+                logger.warn("Appointment with ID {} not found.", id);
                 return Optional.empty();
             } else {
-                logger.error("Failed to retrieve patient with ID {}. Response status code: {}", id, statusCodeValue);
+                logger.error("Failed to retrieve appointment with ID {}. Response status code: {}", id, statusCodeValue);
                 return Optional.empty();
             }
         } catch (RestClientException ex) {
-            logger.error("Error occurred while fetching patient with ID {}: {}", id, ex.getMessage(), ex);
+            logger.error("Error occurred while fetching appointment with ID {}: {}", id, ex.getMessage(), ex);
             return Optional.empty();
         }
     }
 
     @Override
-    public Object createPatient(PatientRequest patientRequest) {
+    public Object createAppointment(AppointmentRequest appointmentRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create patient. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create appointment. Authorization token: {}", authorizationToken);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);
         headers.set("accept", "application/json");
         headers.set("Content-Type", "application/json");
 
-        HttpEntity<PatientRequest> requestEntity = new HttpEntity<>(patientRequest, headers);
+        HttpEntity<AppointmentRequest> requestEntity = new HttpEntity<>(appointmentRequest, headers);
 
         try {
             ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/patients/",
+                    baseUrl + "/appointments/",
                     HttpMethod.POST,
                     requestEntity,
                     Object.class
@@ -133,14 +132,14 @@ public class PatientServiceImpl implements PatientService {
 
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
-                logger.info("Patient created successfully.");
+                logger.info("Appointment created successfully.");
                 return responseBody;
             } else {
-                logger.error("Failed to create patient. Response status code: {}", statusCode);
+                logger.error("Failed to create appointment. Response status code: {}", statusCode);
                 return new Object(); // You may choose to handle this differently
             }
-        } catch (HttpClientErrorException | HttpServerErrorException ex) {
-            logger.error("Error occurred while creating patient: {}", ex.getMessage(), ex);
+        } catch (HttpClientErrorException ex) {
+            logger.error("Error occurred while creating appointment: {}", ex.getMessage(), ex);
             return new Object(); // You may choose to handle this differently
         } catch (RestClientException ex) {
             logger.error("General RestClientException occurred: {}", ex.getMessage(), ex);
@@ -149,19 +148,19 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Object updatePatient(Long id, Patient patient) {
+    public Object updateAppointment(Long id, Appointment appointment) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to update patient with ID {}. Authorization token: {}", id, authorizationToken);
+        logger.info("Received request to update appointment with ID {}. Authorization token: {}", id, authorizationToken);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);
         headers.set("Content-Type", "application/json");
 
-        HttpEntity<Patient> requestEntity = new HttpEntity<>(patient, headers);
+        HttpEntity<Appointment> requestEntity = new HttpEntity<>(appointment, headers);
 
         try {
             ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/patients/" + id,
+                    baseUrl + "/appointments/" + id,
                     HttpMethod.PUT,
                     requestEntity,
                     Object.class
@@ -173,20 +172,18 @@ public class PatientServiceImpl implements PatientService {
 
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
-                logger.info("Patient with ID {} updated successfully.", id);
+                logger.info("Appointment with ID {} updated successfully.", id);
                 return responseBody;
             } else if (statusCode == HttpStatus.NOT_FOUND) {
-                logger.error("Patient with ID {} not found.", id);
+                logger.error("Appointment with ID {} not found.", id);
                 return null;
             } else {
-                logger.error("Failed to update patient with ID {}. Response status code: {}", id, statusCodeValue);
+                logger.error("Failed to update appointment with ID {}. Response status code: {}", id, statusCodeValue);
                 return null;
             }
         } catch (RestClientException ex) {
-            logger.error("Error occurred while updating patient with ID {}: {}", id, ex.getMessage(), ex);
+            logger.error("Error occurred while updating appointment with ID {}: {}", id, ex.getMessage(), ex);
             return null;
         }
     }
-
 }
-
