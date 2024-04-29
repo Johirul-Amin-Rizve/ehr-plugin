@@ -32,5 +32,5 @@ public class AppointmentRequest {
     @NotNull(message = "Practice is required")
     private long practice;
 
-    private int service_location;
+    private ServiceLocation service_location;
 }
