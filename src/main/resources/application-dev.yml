@@ -22,3 +22,43 @@ cors:
 elation:
   api:
     baseurl: "https://sandbox.elationemr.com/api/2.0"  # Base URL for Elation API
+
+---
+
+spring:
+  kafka:
+    # Kafka broker address
+    bootstrap-servers: localhost:9092
+
+    # Producer properties
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    # Consumer properties for group1
+    consumer:
+      group-id: group1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    listener:
+      missing-topics-fatal: false  # Disable fatal error when topic is missing
+
+---
+
+spring:
+  kafka:
+    # Kafka broker address
+    bootstrap-servers: localhost:9092
+
+    # Producer properties
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    # Consumer properties for group2
+    consumer:
+      group-id: group2
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    listener:
+      missing-topics-fatal: false  # Disable fatal error when topic is missing
