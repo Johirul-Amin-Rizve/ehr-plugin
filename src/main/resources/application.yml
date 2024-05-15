@@ -1,5 +1,7 @@
 # Spring application configurations
 spring:
+  liquibase:
+    change-log: classpath:/liquibase/master.xml
   profiles:
     active: dev  # Default active profile is dev
   application:
