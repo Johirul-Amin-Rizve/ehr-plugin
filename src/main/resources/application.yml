@@ -14,7 +14,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect  # Hibernate dialect for PostgreSQL
         format_sql: true  # Format SQL statements for logging
-
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
 # Logging configurations
 logging:
   level:

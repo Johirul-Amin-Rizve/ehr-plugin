@@ -62,7 +62,8 @@ To deploy the EHR plugin application in a production environment using Docker, f
     docker run -p 8080:8080 --network docker_default -e "SPRING_PROFILES_ACTIVE=prod" ehr-plugin:latest
 
 ## Additional Notes
-
+- API documentation: http://localhost:8080/v3/api-docs
+- Swagger UI: http://localhost:8080/swagger-ui.html
 - This project uses Spring Boot, Spring Data JPA, Spring Security, and PostgreSQL.
 - Lombok is included as an optional dependency for convenient boilerplate code generation.
 - The Docker Compose file is provided in the `docker` directory to set up PostgreSQL for local development.
