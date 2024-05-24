@@ -2,6 +2,6 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <include file="classpath:liquibase/changelog/2024-05-15T11:46:26Z_changelog.xml" relativeToChangelogFile="false" />
+    <include file="classpath:liquibase/changelog/2024-05-24T18:01:21Z_changelog.xml" relativeToChangelogFile="false" />
     <!-- Add other changelog files here if needed -->
 </databaseChangeLog>
