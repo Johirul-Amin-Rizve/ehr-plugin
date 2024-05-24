@@ -3,6 +3,7 @@ package com.valhalla.ehrplugin.elation.service.impl;
 import com.valhalla.ehrplugin.elation.dto.appointmentDto.Appointment;
 import com.valhalla.ehrplugin.elation.dto.appointmentDto.AppointmentRequest;
 import com.valhalla.ehrplugin.elation.service.AppointmentService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,15 +19,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class AppointmentServiceImpl implements AppointmentService {
 
     private static final Logger logger = LoggerFactory.getLogger(AppointmentServiceImpl.class);
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
-    private HttpServletRequest request;
+    private final RestTemplate restTemplate;
+    private final HttpServletRequest request;
+    private final RestClient restClient;
 
     @Value("${elation.api.baseurl}")
     private String baseUrl;
@@ -35,21 +36,15 @@ public class AppointmentServiceImpl implements AppointmentService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to fetch appointments. Authorization token: {}", authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-
-        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/appointments/",
-                    HttpMethod.GET,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.get()
+                    .uri(baseUrl + "/appointments")
+                    .accept(MediaType.APPLICATION_JSON)
+                    .header("Authorization", authorizationToken)
+                    .retrieve()
+                    .toEntity(Object.class);
 
-            int statusCodeValue = response.getStatusCodeValue();
+            int statusCodeValue = response.getStatusCode().value();
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
             logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
 
@@ -72,21 +67,15 @@ public class AppointmentServiceImpl implements AppointmentService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to fetch appointment by ID {}. Authorization token: {}", id, authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-
-        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/appointments/" + id,
-                    HttpMethod.GET,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.get()
+                    .uri(baseUrl + "/appointments/" + id)
+                    .accept(MediaType.APPLICATION_JSON)
+                    .header("Authorization", authorizationToken)
+                    .retrieve()
+                    .toEntity(Object.class);
 
-            int statusCodeValue = response.getStatusCodeValue();
+            int statusCodeValue = response.getStatusCode().value();
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
             logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
 
@@ -94,7 +83,7 @@ public class AppointmentServiceImpl implements AppointmentService {
                 Object responseBody = response.getBody();
                 logger.info("Retrieved appointment with ID {} from the API.", id);
                 return Optional.ofNullable(responseBody);
-            } else if (statusCode == HttpStatus.NOT_FOUND) {
+            } else if (statusCode.equals(HttpStatus.NOT_FOUND)) {
                 logger.warn("Appointment with ID {} not found.", id);
                 return Optional.empty();
             } else {
@@ -112,20 +101,15 @@ public class AppointmentServiceImpl implements AppointmentService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to create appointment. Authorization token: {}", authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-        headers.set("Content-Type", "application/json");
-
-        HttpEntity<AppointmentRequest> requestEntity = new HttpEntity<>(appointmentRequest, headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/appointments/",
-                    HttpMethod.POST,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.post()
+                    .uri(baseUrl + "/appointments/")
+                    .accept(MediaType.APPLICATION_JSON)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .header("Authorization", authorizationToken)
+                    .body(appointmentRequest)
+                    .retrieve()
+                    .toEntity(Object.class);
 
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
             logger.info("Received response from API with status code: {}", statusCode);
@@ -152,21 +136,18 @@ public class AppointmentServiceImpl implements AppointmentService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to update appointment with ID {}. Authorization token: {}", id, authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("Content-Type", "application/json");
-
-        HttpEntity<Appointment> requestEntity = new HttpEntity<>(appointment, headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/appointments/" + id,
-                    HttpMethod.PUT,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.put()
+                    .uri(baseUrl + "/appointments/" + id)
+                    .headers(headers -> {
+                        headers.set("Authorization", authorizationToken);
+                        headers.set("Content-Type", "application/json");
+                    })
+                    .body(appointment)
+                    .retrieve()
+                    .toEntity(Object.class);
 
-            int statusCodeValue = response.getStatusCodeValue();
+            int statusCodeValue = response.getStatusCode().value();
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
             logger.info("Received response from API with status code: {} - {}", statusCodeValue, statusCode);
 
@@ -174,7 +155,7 @@ public class AppointmentServiceImpl implements AppointmentService {
                 Object responseBody = response.getBody();
                 logger.info("Appointment with ID {} updated successfully.", id);
                 return responseBody;
-            } else if (statusCode == HttpStatus.NOT_FOUND) {
+            } else if (statusCode.equals(HttpStatus.NOT_FOUND)) {
                 logger.error("Appointment with ID {} not found.", id);
                 return null;
             } else {
