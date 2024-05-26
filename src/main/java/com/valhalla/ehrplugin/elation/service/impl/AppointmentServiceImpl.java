@@ -24,9 +24,9 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     private static final Logger logger = LoggerFactory.getLogger(AppointmentServiceImpl.class);
 
-    private final RestTemplate restTemplate;
     private final HttpServletRequest request;
     private final RestClient restClient;
+    private final KafkaProducerService kafkaProducerService;
 
     @Value("${elation.api.baseurl}")
     private String baseUrl;
@@ -117,6 +117,8 @@ public class AppointmentServiceImpl implements AppointmentService {
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
                 logger.info("Appointment created successfully.");
+                kafkaProducerService.sendMessage(appointmentRequest);
+                logger.info("Appointment sent to kafka producer service.");
                 return responseBody;
             } else {
                 logger.error("Failed to create appointment. Response status code: {}", statusCode);

@@ -1,5 +1,6 @@
 package com.valhalla.ehrplugin.elation.service.impl;
 
+import com.valhalla.ehrplugin.elation.dto.appointmentDto.AppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,8 @@ public class KafkaProducerService {
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
 
-    public void sendMessage(Object object) {
-        kafkaTemplate.send(TOPIC1, object);
-        kafkaTemplate.send(TOPIC2, object);
+    public void sendMessage(AppointmentRequest appointmentRequest) {
+        kafkaTemplate.send(TOPIC1, appointmentRequest);
+        kafkaTemplate.send(TOPIC2, appointmentRequest);
     }
 }

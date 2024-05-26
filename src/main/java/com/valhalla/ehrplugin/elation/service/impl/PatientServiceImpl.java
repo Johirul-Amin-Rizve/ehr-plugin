@@ -111,7 +111,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Object createPatient(PatientRequest patientRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create patient. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create patient: {}", patientRequest);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);
@@ -151,7 +151,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Object updatePatient(Long id, Patient patient) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to update patient with ID {}. Authorization token: {}", id, authorizationToken);
+        logger.info("Received request to update patient: {}", patient);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);

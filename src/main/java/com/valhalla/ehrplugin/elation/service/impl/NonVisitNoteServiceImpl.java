@@ -32,7 +32,7 @@ public class NonVisitNoteServiceImpl implements NonVisitNoteService {
     @Override
     public Object createNonVisitNote(NonVisitNoteRequest nonVisitNoteRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create non visit note. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create non visit note: {}", nonVisitNoteRequest);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);

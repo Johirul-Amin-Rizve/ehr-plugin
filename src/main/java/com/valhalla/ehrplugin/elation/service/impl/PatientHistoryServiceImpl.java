@@ -70,7 +70,7 @@ public class PatientHistoryServiceImpl implements PatientHistoryService {
     @Override
     public Object createPatientHistory(PatientHistoryRequest patientHistoryRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create patient history. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create patient history: {}", patientHistoryRequest);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);

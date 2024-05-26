@@ -70,7 +70,7 @@ public class VisitNoteServiceImpl implements VisitNoteService {
     @Override
     public Object createVisitNote(VisitNoteRequest visitNoteRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create visit note. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create visit note: {}", visitNoteRequest);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorizationToken);

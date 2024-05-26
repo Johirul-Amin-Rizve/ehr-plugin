@@ -1,5 +1,14 @@
 # Spring application configurations
 spring:
+  # Kafka Trusted Resource
+  kafka:
+    consumer:
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.valhalla.ehrplugin.*
+
   liquibase:
     change-log: classpath:/liquibase/master.xml
   profiles:
@@ -14,6 +23,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect  # Hibernate dialect for PostgreSQL
         format_sql: true  # Format SQL statements for logging
+# API doc configurations
 springdoc:
   api-docs:
     path: /v3/api-docs
