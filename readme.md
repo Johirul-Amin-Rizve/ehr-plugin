@@ -59,7 +59,14 @@ To deploy the EHR plugin application in a production environment using Docker, f
 2. **Run the Docker image:**
 
     ```bash
-    docker run -p 8080:8080 --network docker_default -e "SPRING_PROFILES_ACTIVE=prod" ehr-plugin:latest
+    docker run -p 8080:8080 --network docker_default -e "SPRING_PROFILES_ACTIVE=prod" -v "$(pwd)/logs:/app/resources/logs" ehr-plugin:latest
+
+## Access the Container's Shell for Logs
+- docker exec -it <container_name_or_id> sh
+- cd /resources/logs
+- ls -l
+- cat <log_filename>
+- exit
 
 ## Additional Notes
 - API documentation: http://localhost:8080/v3/api-docs
