@@ -18,7 +18,7 @@ public class KafkaConsumerServiceImpl implements KafkaConsumerService {
 
     @Override
     public KafkaConsumer saveConsumer(KafkaConsumer kafkaConsumer) {
-        logger.info("Received request to create kafka consumer: {}", kafkaConsumer);
+        logger.info("Received request to save kafka consumer data into database: {}", kafkaConsumer);
         return kafkaConsumerRepository.save(kafkaConsumer);
     }
 }

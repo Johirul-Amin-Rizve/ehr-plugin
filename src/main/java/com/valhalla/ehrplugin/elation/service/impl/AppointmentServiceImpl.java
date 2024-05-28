@@ -99,7 +99,7 @@ public class AppointmentServiceImpl implements AppointmentService {
     @Override
     public Object createAppointment(AppointmentRequest appointmentRequest) {
         String authorizationToken = request.getHeader("Authorization");
-        logger.info("Received request to create appointment. Authorization token: {}", authorizationToken);
+        logger.info("Received request to create appointment: {}", appointmentRequest);
 
         try {
             ResponseEntity<Object> response = restClient.post()
@@ -117,8 +117,8 @@ public class AppointmentServiceImpl implements AppointmentService {
             if (statusCode.is2xxSuccessful()) {
                 Object responseBody = response.getBody();
                 logger.info("Appointment created successfully.");
+                // appointmentRequest sent to kafka producer service
                 kafkaProducerService.sendMessage(appointmentRequest);
-                logger.info("Appointment sent to kafka producer service.");
                 return responseBody;
             } else {
                 logger.error("Failed to create appointment. Response status code: {}", statusCode);
