@@ -18,13 +18,13 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Create logs directory
-RUN mkdir -p /app/resources/logs
-
-# Copy the packaged jar file from the previous stage
-COPY --from=builder /build/target/ehr-plugin-0.0.1-SNAPSHOT.jar app.jar
+RUN mkdir -p /app/src/main/resources/logs
 
 # Expose the port your application runs on
 EXPOSE 8080
+
+# Copy the packaged jar file from the previous stage
+COPY --from=builder /build/target/ehr-plugin-0.0.1-SNAPSHOT.jar app.jar
 
 # Command to run your application
 CMD ["java", "-jar", "app.jar"]

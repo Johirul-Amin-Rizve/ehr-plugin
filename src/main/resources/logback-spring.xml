@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOG_DIR" value="/app/resources/logs" />
-    <property name="LOG_FILE" value="${LOG_DIR}/app.log" />
+    <!-- Define a property for the log file location -->
+    <property name="LOG_DIR" value="src/main/resources/logs" />
 
     <!-- Console Appender -->
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
@@ -10,10 +10,12 @@
         </encoder>
     </appender>
 
-    <!-- File Appender -->
-    <appender name="RollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FILE}</file>
+    <!-- Rolling File Appender -->
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Define the file name pattern for rolling files -->
+        <file>${LOG_DIR}/app.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- File name pattern with date -->
             <fileNamePattern>${LOG_DIR}/app-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -22,9 +24,9 @@
         </encoder>
     </appender>
 
-    <!-- Root Logger -->
+    <!-- Root Logger Configuration -->
     <root level="info">
         <appender-ref ref="Console" />
-        <appender-ref ref="RollingFileAppender" />
+        <appender-ref ref="RollingFile" />
     </root>
 </configuration>

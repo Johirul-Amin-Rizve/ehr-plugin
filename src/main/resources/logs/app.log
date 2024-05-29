@@ -1,0 +1,916 @@
+2024-05-30 00:11:47 - HV000001: Hibernate Validator 8.0.1.Final
+2024-05-30 00:11:47 - Starting EhrPluginApplication using Java 21.0.2 with PID 16379 (/home/johirul/Desktop/ehr-plugin/target/classes started by johirul in /home/johirul/Desktop/ehr-plugin)
+2024-05-30 00:11:47 - The following 1 profile is active: "dev"
+2024-05-30 00:11:48 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30 00:11:48 - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2024-05-30 00:11:48 - Tomcat initialized with port 8080 (http)
+2024-05-30 00:11:48 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-30 00:11:48 - Starting service [Tomcat]
+2024-05-30 00:11:48 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-30 00:11:48 - Initializing Spring embedded WebApplicationContext
+2024-05-30 00:11:48 - Root WebApplicationContext: initialization completed in 1259 ms
+2024-05-30 00:11:48 - Filter 'webMvcObservationFilter' configured for use
+2024-05-30 00:11:48 - HikariPool-1 - Starting...
+2024-05-30 00:11:49 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c0e2ec
+2024-05-30 00:11:49 - HikariPool-1 - Start completed.
+2024-05-30 00:11:49 - Set default schema name to public
+2024-05-30 00:11:49 - Reading from public.databasechangelog
+2024-05-30 00:11:49 - Database is up to date, no changesets to execute
+2024-05-30 00:11:49 - Reading from public.databasechangelog
+2024-05-30 00:11:49 - UPDATE SUMMARY
+2024-05-30 00:11:49 - Run:                          0
+2024-05-30 00:11:49 - Previously run:               3
+2024-05-30 00:11:49 - Filtered out:                 0
+2024-05-30 00:11:49 - -------------------------------
+2024-05-30 00:11:49 - Total change sets:            3
+2024-05-30 00:11:49 - Update summary generated
+2024-05-30 00:11:49 - Successfully released change log lock
+2024-05-30 00:11:49 - Command execution complete
+2024-05-30 00:11:49 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30 00:11:49 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-30 00:11:49 - HHH000026: Second-level cache disabled
+2024-05-30 00:11:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30 00:11:49 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30 00:11:50 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30 00:11:50 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 00:11:50 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30 00:11:50 - 21 mappings in 'requestMappingHandlerMapping'
+2024-05-30 00:11:51 - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-05-30 00:11:51 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-30 00:11:51 - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-30 00:11:51 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-30 00:11:51 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-30 00:11:51 - Tomcat started on port 8080 (http) with context path ''
+2024-05-30 00:11:51 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 00:11:51 - Kafka version: 3.6.1
+2024-05-30 00:11:51 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 00:11:51 - Kafka startTimeMs: 1717006311712
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] Subscribed to topic(s): topic1
+2024-05-30 00:11:51 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group2-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 00:11:51 - Kafka version: 3.6.1
+2024-05-30 00:11:51 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 00:11:51 - Kafka startTimeMs: 1717006311735
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] Subscribed to topic(s): topic2
+2024-05-30 00:11:51 - Started EhrPluginApplication in 4.72 seconds (process running for 5.015)
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: need to re-join with the given member-id: consumer-group2-2-654b4329-0fb4-46de-b3a1-3eb5d97ab675
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: need to re-join with the given member-id: consumer-group1-1-df955e76-dad5-47a6-8aaf-750dd8f9b2bd
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 00:11:51 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully joined group with generation Generation{generationId=42, memberId='consumer-group2-2-654b4329-0fb4-46de-b3a1-3eb5d97ab675', protocol='range'}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully joined group with generation Generation{generationId=42, memberId='consumer-group1-1-df955e76-dad5-47a6-8aaf-750dd8f9b2bd', protocol='range'}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Finished assignment for group at generation 42: {consumer-group2-2-654b4329-0fb4-46de-b3a1-3eb5d97ab675=Assignment(partitions=[topic2-0])}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Finished assignment for group at generation 42: {consumer-group1-1-df955e76-dad5-47a6-8aaf-750dd8f9b2bd=Assignment(partitions=[topic1-0])}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully synced group in generation Generation{generationId=42, memberId='consumer-group1-1-df955e76-dad5-47a6-8aaf-750dd8f9b2bd', protocol='range'}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully synced group in generation Generation{generationId=42, memberId='consumer-group2-2-654b4329-0fb4-46de-b3a1-3eb5d97ab675', protocol='range'}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Notifying assignor about the new Assignment(partitions=[topic1-0])
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Notifying assignor about the new Assignment(partitions=[topic2-0])
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Adding newly assigned partitions: topic2-0
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Adding newly assigned partitions: topic1-0
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group1-1, groupId=group1] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 00:11:54 - [Consumer clientId=consumer-group2-2, groupId=group2] Setting offset for partition topic2-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 00:11:55 - group2: partitions assigned: [topic2-0]
+2024-05-30 00:11:55 - group1: partitions assigned: [topic1-0]
+2024-05-30 00:11:59 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-30 00:11:59 - Initializing Servlet 'dispatcherServlet'
+2024-05-30 00:11:59 - Detected StandardServletMultipartResolver
+2024-05-30 00:11:59 - Detected AcceptHeaderLocaleResolver
+2024-05-30 00:11:59 - Detected FixedThemeResolver
+2024-05-30 00:11:59 - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1440a166
+2024-05-30 00:11:59 - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1635e239
+2024-05-30 00:11:59 - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-05-30 00:11:59 - Completed initialization in 2 ms
+2024-05-30 00:11:59 - POST "/elation/authenticate", parameters={}
+2024-05-30 00:11:59 - Mapped to com.valhalla.ehrplugin.elation.controller.AuthController#authenticate(AuthRequest)
+2024-05-30 00:11:59 - Read "application/json;charset=UTF-8" to [com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@477a9648]
+2024-05-30 00:11:59 - Received authentication request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@477a9648
+2024-05-30 00:11:59 - HTTP POST https://sandbox.elationemr.com/api/2.0/oauth2/token/
+2024-05-30 00:11:59 - Accept=[application/json, application/*+json]
+2024-05-30 00:11:59 - Writing [{grant_type=[password], username=[2132-346@api.elationemr.com], password=[bb513be17f386ffcc2e8e90790d27032]}] as "application/x-www-form-urlencoded"
+2024-05-30 00:12:00 - Response 200 OK
+2024-05-30 00:12:00 - Reading to [java.lang.Object]
+2024-05-30 00:12:00 - Authentication successful for username: 2132-346@api.elationemr.com
+2024-05-30 00:12:00 - Authentication successful for request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@477a9648
+2024-05-30 00:12:00 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30 00:12:00 - Writing [{token_type=Bearer, expires_in=3600, access_token=eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU (truncated)...]
+2024-05-30 00:12:00 - Completed 200 OK
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Revoke previously assigned partitions topic2-0
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Revoke previously assigned partitions topic1-0
+2024-05-30 00:12:15 - group2: partitions revoked: [topic2-0]
+2024-05-30 00:12:15 - group1: partitions revoked: [topic1-0]
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Member consumer-group2-2-654b4329-0fb4-46de-b3a1-3eb5d97ab675 sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Member consumer-group1-1-df955e76-dad5-47a6-8aaf-750dd8f9b2bd sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 00:12:15 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 00:12:16 - Metrics scheduler closed
+2024-05-30 00:12:16 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 00:12:16 - Metrics scheduler closed
+2024-05-30 00:12:16 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 00:12:16 - Metrics reporters closed
+2024-05-30 00:12:16 - Metrics reporters closed
+2024-05-30 00:12:16 - App info kafka.consumer for consumer-group2-2 unregistered
+2024-05-30 00:12:16 - App info kafka.consumer for consumer-group1-1 unregistered
+2024-05-30 00:12:16 - group2: Consumer stopped
+2024-05-30 00:12:16 - group1: Consumer stopped
+2024-05-30 00:12:16 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 00:12:16 - HikariPool-1 - Shutdown initiated...
+2024-05-30 00:12:16 - HikariPool-1 - Shutdown completed.
+2024-05-29 18:18:09 - HV000001: Hibernate Validator 8.0.1.Final
+2024-05-29 18:18:09 - Starting EhrPluginApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 1 (/app/app.jar started by root in /app)
+2024-05-29 18:18:09 - The following 1 profile is active: "prod"
+2024-05-29 18:18:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-29 18:18:10 - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2024-05-29 18:18:10 - Tomcat initialized with port 8080 (http)
+2024-05-29 18:18:10 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-29 18:18:10 - Starting service [Tomcat]
+2024-05-29 18:18:10 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-29 18:18:10 - Initializing Spring embedded WebApplicationContext
+2024-05-29 18:18:10 - Root WebApplicationContext: initialization completed in 1386 ms
+2024-05-29 18:18:10 - Filter 'webMvcObservationFilter' configured for use
+2024-05-29 18:18:11 - HikariPool-1 - Starting...
+2024-05-29 18:18:11 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@645ba24a
+2024-05-29 18:18:11 - HikariPool-1 - Start completed.
+2024-05-29 18:18:11 - Set default schema name to public
+2024-05-29 18:18:11 - Reading from public.databasechangelog
+2024-05-29 18:18:11 - Database is up to date, no changesets to execute
+2024-05-29 18:18:11 - Reading from public.databasechangelog
+2024-05-29 18:18:11 - UPDATE SUMMARY
+2024-05-29 18:18:11 - Run:                          0
+2024-05-29 18:18:11 - Previously run:               3
+2024-05-29 18:18:11 - Filtered out:                 0
+2024-05-29 18:18:11 - -------------------------------
+2024-05-29 18:18:11 - Total change sets:            3
+2024-05-29 18:18:11 - Update summary generated
+2024-05-29 18:18:11 - Successfully released change log lock
+2024-05-29 18:18:11 - Command execution complete
+2024-05-29 18:18:11 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-29 18:18:11 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-29 18:18:11 - HHH000026: Second-level cache disabled
+2024-05-29 18:18:11 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-29 18:18:12 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-29 18:18:12 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-29 18:18:12 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-29 18:18:13 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-29 18:18:13 - 21 mappings in 'requestMappingHandlerMapping'
+2024-05-29 18:18:13 - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-05-29 18:18:13 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-29 18:18:13 - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-29 18:18:13 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-29 18:18:13 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-29 18:18:13 - Tomcat started on port 8080 (http) with context path ''
+2024-05-29 18:18:13 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9093]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-29 18:18:13 - Kafka version: 3.6.1
+2024-05-29 18:18:13 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-29 18:18:13 - Kafka startTimeMs: 1717006693855
+2024-05-29 18:18:13 - [Consumer clientId=consumer-group2-1, groupId=group2] Subscribed to topic(s): topic2
+2024-05-29 18:18:13 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9093]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group1-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-29 18:18:13 - Kafka version: 3.6.1
+2024-05-29 18:18:13 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-29 18:18:13 - Kafka startTimeMs: 1717006693875
+2024-05-29 18:18:13 - [Consumer clientId=consumer-group1-2, groupId=group1] Subscribed to topic(s): topic1
+2024-05-29 18:18:13 - Started EhrPluginApplication in 4.886 seconds (process running for 5.165)
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] Discovered group coordinator kafka:9093 (id: 2147482646 rack: null)
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] Discovered group coordinator kafka:9093 (id: 2147482646 rack: null)
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] (Re-)joining group
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] (Re-)joining group
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: need to re-join with the given member-id: consumer-group1-2-48451b7a-165f-476c-a114-0b28c778165c
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group1-2, groupId=group1] (Re-)joining group
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: need to re-join with the given member-id: consumer-group2-1-8c900a57-cea9-4371-9bb1-35c2c0459412
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-29 18:18:14 - [Consumer clientId=consumer-group2-1, groupId=group2] (Re-)joining group
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Successfully joined group with generation Generation{generationId=46, memberId='consumer-group1-2-48451b7a-165f-476c-a114-0b28c778165c', protocol='range'}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Successfully joined group with generation Generation{generationId=46, memberId='consumer-group2-1-8c900a57-cea9-4371-9bb1-35c2c0459412', protocol='range'}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Finished assignment for group at generation 46: {consumer-group2-1-8c900a57-cea9-4371-9bb1-35c2c0459412=Assignment(partitions=[topic2-0])}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Finished assignment for group at generation 46: {consumer-group1-2-48451b7a-165f-476c-a114-0b28c778165c=Assignment(partitions=[topic1-0])}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Successfully synced group in generation Generation{generationId=46, memberId='consumer-group1-2-48451b7a-165f-476c-a114-0b28c778165c', protocol='range'}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Successfully synced group in generation Generation{generationId=46, memberId='consumer-group2-1-8c900a57-cea9-4371-9bb1-35c2c0459412', protocol='range'}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Notifying assignor about the new Assignment(partitions=[topic1-0])
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Notifying assignor about the new Assignment(partitions=[topic2-0])
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Adding newly assigned partitions: topic1-0
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Adding newly assigned partitions: topic2-0
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group1-2, groupId=group1] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9093 (id: 1001 rack: null)], epoch=0}}
+2024-05-29 18:18:17 - [Consumer clientId=consumer-group2-1, groupId=group2] Setting offset for partition topic2-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9093 (id: 1001 rack: null)], epoch=0}}
+2024-05-29 18:18:17 - group2: partitions assigned: [topic2-0]
+2024-05-29 18:18:17 - group1: partitions assigned: [topic1-0]
+2024-05-29 18:18:26 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-29 18:18:26 - Initializing Servlet 'dispatcherServlet'
+2024-05-29 18:18:26 - Detected StandardServletMultipartResolver
+2024-05-29 18:18:26 - Detected AcceptHeaderLocaleResolver
+2024-05-29 18:18:26 - Detected FixedThemeResolver
+2024-05-29 18:18:26 - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@943184c
+2024-05-29 18:18:26 - Detected org.springframework.web.servlet.support.SessionFlashMapManager@52d0a5fe
+2024-05-29 18:18:26 - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-05-29 18:18:26 - Completed initialization in 2 ms
+2024-05-29 18:18:26 - POST "/elation/authenticate", parameters={}
+2024-05-29 18:18:26 - Mapped to com.valhalla.ehrplugin.elation.controller.AuthController#authenticate(AuthRequest)
+2024-05-29 18:18:26 - Read "application/json;charset=UTF-8" to [com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@15ed854f]
+2024-05-29 18:18:26 - Received authentication request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@15ed854f
+2024-05-29 18:18:26 - HTTP POST https://sandbox.elationemr.com/api/2.0/oauth2/token/
+2024-05-29 18:18:26 - Accept=[application/json, application/*+json]
+2024-05-29 18:18:26 - Writing [{grant_type=[password], username=[2132-346@api.elationemr.com], password=[bb513be17f386ffcc2e8e90790d27032]}] as "application/x-www-form-urlencoded"
+2024-05-29 18:18:28 - Response 200 OK
+2024-05-29 18:18:28 - Reading to [java.lang.Object]
+2024-05-29 18:18:28 - Authentication successful for username: 2132-346@api.elationemr.com
+2024-05-29 18:18:28 - Authentication successful for request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@15ed854f
+2024-05-29 18:18:28 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-29 18:18:28 - Writing [{token_type=Bearer, expires_in=3600, access_token=eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU (truncated)...]
+2024-05-29 18:18:28 - Completed 200 OK
+2024-05-29 18:19:13 - POST "/elation/authenticate", parameters={}
+2024-05-29 18:19:13 - Mapped to com.valhalla.ehrplugin.elation.controller.AuthController#authenticate(AuthRequest)
+2024-05-29 18:19:13 - Read "application/json;charset=UTF-8" to [com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@1f2c9e7d]
+2024-05-29 18:19:13 - Received authentication request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@1f2c9e7d
+2024-05-29 18:19:13 - HTTP POST https://sandbox.elationemr.com/api/2.0/oauth2/token/
+2024-05-29 18:19:13 - Accept=[application/json, application/*+json]
+2024-05-29 18:19:13 - Writing [{grant_type=[password], username=[2132-346@api.elationemr.com], password=[bb513be17f386ffcc2e8e90790d27032]}] as "application/x-www-form-urlencoded"
+2024-05-29 18:19:14 - Response 200 OK
+2024-05-29 18:19:14 - Reading to [java.lang.Object]
+2024-05-29 18:19:14 - Authentication successful for username: 2132-346@api.elationemr.com
+2024-05-29 18:19:14 - Authentication successful for request: com.valhalla.ehrplugin.elation.dto.authenticationDto.AuthRequest@1f2c9e7d
+2024-05-29 18:19:14 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-29 18:19:14 - Writing [{token_type=Bearer, expires_in=3600, access_token=eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU (truncated)...]
+2024-05-29 18:19:14 - Completed 200 OK
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Revoke previously assigned partitions topic1-0
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Revoke previously assigned partitions topic2-0
+2024-05-29 18:20:21 - group1: partitions revoked: [topic1-0]
+2024-05-29 18:20:21 - group2: partitions revoked: [topic2-0]
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Member consumer-group1-2-48451b7a-165f-476c-a114-0b28c778165c sending LeaveGroup request to coordinator kafka:9093 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Member consumer-group2-1-8c900a57-cea9-4371-9bb1-35c2c0459412 sending LeaveGroup request to coordinator kafka:9093 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Unsubscribed all topics or patterns and assigned partitions
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Unsubscribed all topics or patterns and assigned partitions
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-29 18:20:21 - Metrics scheduler closed
+2024-05-29 18:20:21 - Metrics scheduler closed
+2024-05-29 18:20:21 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-29 18:20:21 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-29 18:20:21 - Metrics reporters closed
+2024-05-29 18:20:21 - Metrics reporters closed
+2024-05-29 18:20:21 - App info kafka.consumer for consumer-group2-1 unregistered
+2024-05-29 18:20:21 - App info kafka.consumer for consumer-group1-2 unregistered
+2024-05-29 18:20:21 - group2: Consumer stopped
+2024-05-29 18:20:21 - group1: Consumer stopped
+2024-05-29 18:20:21 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-29 18:20:21 - HikariPool-1 - Shutdown initiated...
+2024-05-29 18:20:21 - HikariPool-1 - Shutdown completed.
+2024-05-29 18:20:25 - HV000001: Hibernate Validator 8.0.1.Final
+2024-05-29 18:20:25 - Starting EhrPluginApplication v0.0.1-SNAPSHOT using Java 17.0.11 with PID 1 (/app/app.jar started by root in /app)
+2024-05-29 18:20:25 - The following 1 profile is active: "prod"
+2024-05-29 18:20:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-29 18:20:26 - Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2024-05-29 18:20:26 - Tomcat initialized with port 8080 (http)
+2024-05-29 18:20:26 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-29 18:20:26 - Starting service [Tomcat]
+2024-05-29 18:20:26 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-29 18:20:26 - Initializing Spring embedded WebApplicationContext
+2024-05-29 18:20:26 - Root WebApplicationContext: initialization completed in 1483 ms
+2024-05-29 18:20:26 - Filter 'webMvcObservationFilter' configured for use
+2024-05-29 18:20:26 - HikariPool-1 - Starting...
+2024-05-29 18:20:27 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5922cff3
+2024-05-29 18:20:27 - HikariPool-1 - Start completed.
+2024-05-29 18:20:27 - Set default schema name to public
+2024-05-29 18:20:27 - Reading from public.databasechangelog
+2024-05-29 18:20:27 - Database is up to date, no changesets to execute
+2024-05-29 18:20:27 - Reading from public.databasechangelog
+2024-05-29 18:20:27 - UPDATE SUMMARY
+2024-05-29 18:20:27 - Run:                          0
+2024-05-29 18:20:27 - Previously run:               3
+2024-05-29 18:20:27 - Filtered out:                 0
+2024-05-29 18:20:27 - -------------------------------
+2024-05-29 18:20:27 - Total change sets:            3
+2024-05-29 18:20:27 - Update summary generated
+2024-05-29 18:20:27 - Successfully released change log lock
+2024-05-29 18:20:27 - Command execution complete
+2024-05-29 18:20:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-29 18:20:27 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-29 18:20:27 - HHH000026: Second-level cache disabled
+2024-05-29 18:20:27 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-29 18:20:27 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-29 18:20:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-29 18:20:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-29 18:20:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-29 18:20:28 - 21 mappings in 'requestMappingHandlerMapping'
+2024-05-29 18:20:28 - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-05-29 18:20:29 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-29 18:20:29 - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-29 18:20:29 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-29 18:20:29 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-29 18:20:29 - Tomcat started on port 8080 (http) with context path ''
+2024-05-29 18:20:29 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9093]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-29 18:20:29 - Kafka version: 3.6.1
+2024-05-29 18:20:29 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-29 18:20:29 - Kafka startTimeMs: 1717006829569
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] Subscribed to topic(s): topic2
+2024-05-29 18:20:29 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9093]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group1-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-29 18:20:29 - Kafka version: 3.6.1
+2024-05-29 18:20:29 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-29 18:20:29 - Kafka startTimeMs: 1717006829592
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] Subscribed to topic(s): topic1
+2024-05-29 18:20:29 - Started EhrPluginApplication in 4.894 seconds (process running for 5.17)
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] Discovered group coordinator kafka:9093 (id: 2147482646 rack: null)
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] Discovered group coordinator kafka:9093 (id: 2147482646 rack: null)
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] (Re-)joining group
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] (Re-)joining group
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: need to re-join with the given member-id: consumer-group1-2-05871e5a-7cf6-46d2-aa7b-b4f8bd451c8c
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: need to re-join with the given member-id: consumer-group2-1-e1d5364b-940f-469d-80e9-74fb3375b222
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group2-1, groupId=group2] (Re-)joining group
+2024-05-29 18:20:29 - [Consumer clientId=consumer-group1-2, groupId=group1] (Re-)joining group
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Successfully joined group with generation Generation{generationId=48, memberId='consumer-group2-1-e1d5364b-940f-469d-80e9-74fb3375b222', protocol='range'}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Successfully joined group with generation Generation{generationId=48, memberId='consumer-group1-2-05871e5a-7cf6-46d2-aa7b-b4f8bd451c8c', protocol='range'}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Finished assignment for group at generation 48: {consumer-group1-2-05871e5a-7cf6-46d2-aa7b-b4f8bd451c8c=Assignment(partitions=[topic1-0])}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Finished assignment for group at generation 48: {consumer-group2-1-e1d5364b-940f-469d-80e9-74fb3375b222=Assignment(partitions=[topic2-0])}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Successfully synced group in generation Generation{generationId=48, memberId='consumer-group1-2-05871e5a-7cf6-46d2-aa7b-b4f8bd451c8c', protocol='range'}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Successfully synced group in generation Generation{generationId=48, memberId='consumer-group2-1-e1d5364b-940f-469d-80e9-74fb3375b222', protocol='range'}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Notifying assignor about the new Assignment(partitions=[topic1-0])
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Notifying assignor about the new Assignment(partitions=[topic2-0])
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Adding newly assigned partitions: topic1-0
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Adding newly assigned partitions: topic2-0
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group1-2, groupId=group1] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9093 (id: 1001 rack: null)], epoch=0}}
+2024-05-29 18:20:32 - [Consumer clientId=consumer-group2-1, groupId=group2] Setting offset for partition topic2-0 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9093 (id: 1001 rack: null)], epoch=0}}
+2024-05-29 18:20:32 - group1: partitions assigned: [topic1-0]
+2024-05-29 18:20:32 - group2: partitions assigned: [topic2-0]
