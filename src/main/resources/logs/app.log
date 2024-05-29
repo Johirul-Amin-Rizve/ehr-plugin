@@ -5038,3 +5038,657 @@ java.lang.NullPointerException: value
 2024-05-30 01:31:14 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-05-30 01:31:14 - Writing [{id=142392597151745, actual_name=null, address=null, caregiver_practice=140808266448900, consents=[] (truncated)...]
 2024-05-30 01:31:14 - Completed 200 OK
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Revoke previously assigned partitions topic1-0
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Revoke previously assigned partitions topic2-0
+2024-05-30 01:36:24 - group1: partitions revoked: [topic1-0]
+2024-05-30 01:36:24 - group2: partitions revoked: [topic2-0]
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Member consumer-group2-2-edfa7144-50b8-44bd-b9cb-9adcee23c37a sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Member consumer-group1-1-59023d79-c879-4c3a-845f-ec3bebe69f0b sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:24 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:25 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:25 - Metrics scheduler closed
+2024-05-30 01:36:25 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:36:25 - Metrics scheduler closed
+2024-05-30 01:36:25 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:36:25 - Metrics reporters closed
+2024-05-30 01:36:25 - Metrics reporters closed
+2024-05-30 01:36:25 - App info kafka.consumer for consumer-group1-1 unregistered
+2024-05-30 01:36:25 - App info kafka.consumer for consumer-group2-2 unregistered
+2024-05-30 01:36:25 - group1: Consumer stopped
+2024-05-30 01:36:25 - group2: Consumer stopped
+2024-05-30 01:36:25 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 01:36:25 - HikariPool-1 - Shutdown initiated...
+2024-05-30 01:36:25 - HikariPool-1 - Shutdown completed.
+2024-05-30 01:36:27 - HV000001: Hibernate Validator 8.0.1.Final
+2024-05-30 01:36:27 - Starting EhrPluginApplication using Java 21.0.2 with PID 20313 (/home/johirul/Desktop/ehr-plugin/target/classes started by johirul in /home/johirul/Desktop/ehr-plugin)
+2024-05-30 01:36:27 - The following 1 profile is active: "dev"
+2024-05-30 01:36:28 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30 01:36:28 - Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2024-05-30 01:36:28 - Tomcat initialized with port 8080 (http)
+2024-05-30 01:36:28 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-30 01:36:28 - Starting service [Tomcat]
+2024-05-30 01:36:28 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-30 01:36:28 - Initializing Spring embedded WebApplicationContext
+2024-05-30 01:36:28 - Root WebApplicationContext: initialization completed in 1279 ms
+2024-05-30 01:36:28 - Filter 'webMvcObservationFilter' configured for use
+2024-05-30 01:36:28 - HikariPool-1 - Starting...
+2024-05-30 01:36:29 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@466fedfa
+2024-05-30 01:36:29 - HikariPool-1 - Start completed.
+2024-05-30 01:36:29 - Set default schema name to public
+2024-05-30 01:36:29 - Reading from public.databasechangelog
+2024-05-30 01:36:29 - Database is up to date, no changesets to execute
+2024-05-30 01:36:29 - Reading from public.databasechangelog
+2024-05-30 01:36:29 - UPDATE SUMMARY
+2024-05-30 01:36:29 - Run:                          0
+2024-05-30 01:36:29 - Previously run:               3
+2024-05-30 01:36:29 - Filtered out:                 0
+2024-05-30 01:36:29 - -------------------------------
+2024-05-30 01:36:29 - Total change sets:            3
+2024-05-30 01:36:29 - Update summary generated
+2024-05-30 01:36:29 - Successfully released change log lock
+2024-05-30 01:36:29 - Command execution complete
+2024-05-30 01:36:29 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30 01:36:29 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-30 01:36:29 - HHH000026: Second-level cache disabled
+2024-05-30 01:36:29 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30 01:36:29 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30 01:36:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30 01:36:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 01:36:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30 01:36:30 - 21 mappings in 'requestMappingHandlerMapping'
+2024-05-30 01:36:30 - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-05-30 01:36:30 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-30 01:36:30 - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-30 01:36:31 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-30 01:36:31 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-30 01:36:31 - Tomcat started on port 8080 (http) with context path ''
+2024-05-30 01:36:31 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 01:36:31 - Kafka version: 3.6.1
+2024-05-30 01:36:31 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 01:36:31 - Kafka startTimeMs: 1717011391393
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] Subscribed to topic(s): topic1
+2024-05-30 01:36:31 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group2-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 01:36:31 - Kafka version: 3.6.1
+2024-05-30 01:36:31 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 01:36:31 - Kafka startTimeMs: 1717011391425
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] Subscribed to topic(s): topic2
+2024-05-30 01:36:31 - Started EhrPluginApplication in 4.468 seconds (process running for 4.77)
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: need to re-join with the given member-id: consumer-group1-1-559c01e7-a839-4cec-821a-6f4295a98b24
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: need to re-join with the given member-id: consumer-group2-2-a70d954e-2bed-49d1-9389-5da4f5c74273
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 01:36:31 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully joined group with generation Generation{generationId=66, memberId='consumer-group2-2-a70d954e-2bed-49d1-9389-5da4f5c74273', protocol='range'}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully joined group with generation Generation{generationId=66, memberId='consumer-group1-1-559c01e7-a839-4cec-821a-6f4295a98b24', protocol='range'}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Finished assignment for group at generation 66: {consumer-group2-2-a70d954e-2bed-49d1-9389-5da4f5c74273=Assignment(partitions=[topic2-0])}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Finished assignment for group at generation 66: {consumer-group1-1-559c01e7-a839-4cec-821a-6f4295a98b24=Assignment(partitions=[topic1-0])}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully synced group in generation Generation{generationId=66, memberId='consumer-group2-2-a70d954e-2bed-49d1-9389-5da4f5c74273', protocol='range'}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully synced group in generation Generation{generationId=66, memberId='consumer-group1-1-559c01e7-a839-4cec-821a-6f4295a98b24', protocol='range'}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Notifying assignor about the new Assignment(partitions=[topic2-0])
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Notifying assignor about the new Assignment(partitions=[topic1-0])
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Adding newly assigned partitions: topic2-0
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Adding newly assigned partitions: topic1-0
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group1-1, groupId=group1] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 01:36:34 - [Consumer clientId=consumer-group2-2, groupId=group2] Setting offset for partition topic2-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 01:36:34 - group1: partitions assigned: [topic1-0]
+2024-05-30 01:36:34 - group2: partitions assigned: [topic2-0]
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Revoke previously assigned partitions topic1-0
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Revoke previously assigned partitions topic2-0
+2024-05-30 01:36:49 - group1: partitions revoked: [topic1-0]
+2024-05-30 01:36:49 - group2: partitions revoked: [topic2-0]
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Member consumer-group1-1-559c01e7-a839-4cec-821a-6f4295a98b24 sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Member consumer-group2-2-a70d954e-2bed-49d1-9389-5da4f5c74273 sending LeaveGroup request to coordinator localhost:9092 (id: 2147482646 rack: null) due to the consumer unsubscribed from all topics
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:36:49 - Metrics scheduler closed
+2024-05-30 01:36:49 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:36:49 - Metrics reporters closed
+2024-05-30 01:36:49 - Metrics scheduler closed
+2024-05-30 01:36:49 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:36:49 - Metrics reporters closed
+2024-05-30 01:36:49 - App info kafka.consumer for consumer-group2-2 unregistered
+2024-05-30 01:36:49 - App info kafka.consumer for consumer-group1-1 unregistered
+2024-05-30 01:36:49 - group2: Consumer stopped
+2024-05-30 01:36:49 - group1: Consumer stopped
+2024-05-30 01:36:49 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 01:36:49 - HikariPool-1 - Shutdown initiated...
+2024-05-30 01:36:49 - HikariPool-1 - Shutdown completed.
+2024-05-30 01:36:51 - HV000001: Hibernate Validator 8.0.1.Final
+2024-05-30 01:36:51 - Starting EhrPluginApplication using Java 21.0.2 with PID 20449 (/home/johirul/Desktop/ehr-plugin/target/classes started by johirul in /home/johirul/Desktop/ehr-plugin)
+2024-05-30 01:36:51 - The following 1 profile is active: "dev"
+2024-05-30 01:36:52 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30 01:36:52 - Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interface.
+2024-05-30 01:36:53 - Tomcat initialized with port 8080 (http)
+2024-05-30 01:36:53 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-30 01:36:53 - Starting service [Tomcat]
+2024-05-30 01:36:53 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-30 01:36:53 - Initializing Spring embedded WebApplicationContext
+2024-05-30 01:36:53 - Root WebApplicationContext: initialization completed in 1200 ms
+2024-05-30 01:36:53 - Filter 'webMvcObservationFilter' configured for use
+2024-05-30 01:36:53 - HikariPool-1 - Starting...
+2024-05-30 01:36:53 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59127611
+2024-05-30 01:36:53 - HikariPool-1 - Start completed.
+2024-05-30 01:36:53 - Set default schema name to public
+2024-05-30 01:36:53 - Reading from public.databasechangelog
+2024-05-30 01:36:53 - Database is up to date, no changesets to execute
+2024-05-30 01:36:53 - Reading from public.databasechangelog
+2024-05-30 01:36:53 - UPDATE SUMMARY
+2024-05-30 01:36:53 - Run:                          0
+2024-05-30 01:36:53 - Previously run:               3
+2024-05-30 01:36:53 - Filtered out:                 0
+2024-05-30 01:36:53 - -------------------------------
+2024-05-30 01:36:53 - Total change sets:            3
+2024-05-30 01:36:53 - Update summary generated
+2024-05-30 01:36:54 - Successfully released change log lock
+2024-05-30 01:36:54 - Command execution complete
+2024-05-30 01:36:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30 01:36:54 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-30 01:36:54 - HHH000026: Second-level cache disabled
+2024-05-30 01:36:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30 01:36:54 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30 01:36:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30 01:36:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 01:36:55 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30 01:36:55 - 21 mappings in 'requestMappingHandlerMapping'
+2024-05-30 01:36:55 - Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-05-30 01:36:55 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-30 01:36:55 - ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-30 01:36:55 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-05-30 01:36:55 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-30 01:36:55 - Tomcat started on port 8080 (http) with context path ''
+2024-05-30 01:36:55 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group1-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 01:36:55 - Kafka version: 3.6.1
+2024-05-30 01:36:55 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 01:36:55 - Kafka startTimeMs: 1717011415982
+2024-05-30 01:36:55 - [Consumer clientId=consumer-group1-1, groupId=group1] Subscribed to topic(s): topic1
+2024-05-30 01:36:56 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group2-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-05-30 01:36:56 - Kafka version: 3.6.1
+2024-05-30 01:36:56 - Kafka commitId: 5e3c2b738d253ff5
+2024-05-30 01:36:56 - Kafka startTimeMs: 1717011416006
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Subscribed to topic(s): topic2
+2024-05-30 01:36:56 - Started EhrPluginApplication in 4.445 seconds (process running for 4.719)
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] Cluster ID: qFU-lY0mRSyn-HJU68YCCA
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] Discovered group coordinator localhost:9092 (id: 2147482646 rack: null)
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: need to re-join with the given member-id: consumer-group2-2-3a29c656-9ab1-45eb-a28c-9878c5fe03ba
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: need to re-join with the given member-id: consumer-group1-1-fa609c0f-c6e6-4ba2-b070-1b2c7dd452eb
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group2-2, groupId=group2] (Re-)joining group
+2024-05-30 01:36:56 - [Consumer clientId=consumer-group1-1, groupId=group1] (Re-)joining group
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully joined group with generation Generation{generationId=68, memberId='consumer-group2-2-3a29c656-9ab1-45eb-a28c-9878c5fe03ba', protocol='range'}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully joined group with generation Generation{generationId=68, memberId='consumer-group1-1-fa609c0f-c6e6-4ba2-b070-1b2c7dd452eb', protocol='range'}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Finished assignment for group at generation 68: {consumer-group2-2-3a29c656-9ab1-45eb-a28c-9878c5fe03ba=Assignment(partitions=[topic2-0])}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Finished assignment for group at generation 68: {consumer-group1-1-fa609c0f-c6e6-4ba2-b070-1b2c7dd452eb=Assignment(partitions=[topic1-0])}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Successfully synced group in generation Generation{generationId=68, memberId='consumer-group1-1-fa609c0f-c6e6-4ba2-b070-1b2c7dd452eb', protocol='range'}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Successfully synced group in generation Generation{generationId=68, memberId='consumer-group2-2-3a29c656-9ab1-45eb-a28c-9878c5fe03ba', protocol='range'}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Notifying assignor about the new Assignment(partitions=[topic1-0])
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Notifying assignor about the new Assignment(partitions=[topic2-0])
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Adding newly assigned partitions: topic2-0
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Adding newly assigned partitions: topic1-0
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group1-1, groupId=group1] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 01:36:59 - [Consumer clientId=consumer-group2-2, groupId=group2] Setting offset for partition topic2-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1001 rack: null)], epoch=0}}
+2024-05-30 01:36:59 - group1: partitions assigned: [topic1-0]
+2024-05-30 01:36:59 - group2: partitions assigned: [topic2-0]
+2024-05-30 01:37:10 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-30 01:37:10 - Initializing Servlet 'dispatcherServlet'
+2024-05-30 01:37:10 - Detected StandardServletMultipartResolver
+2024-05-30 01:37:10 - Detected AcceptHeaderLocaleResolver
+2024-05-30 01:37:10 - Detected FixedThemeResolver
+2024-05-30 01:37:10 - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@78f2cab9
+2024-05-30 01:37:10 - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2e6ca6b5
+2024-05-30 01:37:10 - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-05-30 01:37:10 - Completed initialization in 3 ms
+2024-05-30 01:37:10 - GET "/elation/patient-histories", parameters={}
+2024-05-30 01:37:10 - Mapped to com.valhalla.ehrplugin.elation.controller.PatientHistoryController#getAllPatientHistories()
+2024-05-30 01:37:10 - Received request to get patient history.
+2024-05-30 01:37:10 - Received request to fetch patient histories. Authorization token: Bearer eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU40anpYYkdScFZva3VFIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm80WjU5YzFEUFB5c2pnT1lJV0ZlN2VqWmRobmFuU2NDb0x0TlM2QldHdkUiLCJpc3MiOiJodHRwczovL3Nzby5zYW5kYm94LmVsYXRpb25lbXIuY29tL29hdXRoMi9hdXMyYzJ5aDE0RllpTjdzcTFkNyIsImF1ZCI6ImFwaTovL2FwcGxpY2F0aW9ucyIsImlhdCI6MTcxNzAxMDA5MCwiZXhwIjoxNzE3MDEzNjkwLCJjaWQiOiJ0aWxhMkZ5TW8ycVNsZHdGQ05ic3FCc1hKZlU4MVM4Z1ZCZFIzU2NGIiwic2NwIjpbImFwaXYyIl0sInN1YiI6InRpbGEyRnlNbzJxU2xkd0ZDTmJzcUJzWEpmVTgxUzhnVkJkUjNTY0YiLCJoc3AiOiJzYW5kYm94MSIsInByYWN0aWNlX2lkcyI6WzE0MDgwODI2NjQ0ODkwMF19.HCckJ39Py6Hk38zswiZzHJ56kOKGqL_Zsp_sdhWPfKcrlPq99pvCWtpKs3C396yJI5NIkE6omaPLa_q-NkxBldmS1OJS6_d0yMk2ccaheh7UH9e2DKs7BGm2LrosBPYPGul-BC94L8Cfka3QOGThmqc743s1KVah5AN4UZzk745EcwFOxiveFH9Rlx_OHfEk79Eqyyo_LAVzkZhLKzYRmiU0yxTe4j2l6Xtn1bKXK4C4ZKLfQL4ufTbAFAmVrZcs-xcmtkhZUXW_egBrZEjZW9kuZKEbvDA0avfWsOqWDpftLGk1qsauSYr25Rr52aXJHqlkQppU0hpbmdmgOKFslw
+2024-05-30 01:37:12 - Reading to [java.lang.Object]
+2024-05-30 01:37:12 - Received response from API with status code: 200 - 200 OK
+2024-05-30 01:37:12 - Retrieved patient histories from the API.
+2024-05-30 01:37:12 - Retrieved patient history successfully.
+2024-05-30 01:37:12 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30 01:37:12 - Writing [{count=3816, next=https://sandbox.elationemr.com/api/2.0/histories?limit=100&offset=100, previous=nu (truncated)...]
+2024-05-30 01:37:12 - Completed 200 OK
+2024-05-30 01:37:59 - POST "/elation/patient-histories", parameters={}
+2024-05-30 01:37:59 - Mapped to com.valhalla.ehrplugin.elation.controller.PatientHistoryController#createPatientHistory(PatientHistoryRequest)
+2024-05-30 01:37:59 - Read "application/json;charset=UTF-8" to [com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest@c3d641f]
+2024-05-30 01:37:59 - Creating a new patient history: com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest@c3d641f
+2024-05-30 01:37:59 - Received request to create patient history: com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest@c3d641f
+2024-05-30 01:37:59 - Writing [com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest@c3d641f] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2024-05-30 01:38:00 - Reading to [java.lang.Object]
+2024-05-30 01:38:00 - Received response from API with status code: 201 CREATED
+2024-05-30 01:38:00 - Patient history created successfully.
+2024-05-30 01:38:00 - Patient history created successfully: com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest@c3d641f
+2024-05-30 01:38:00 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30 01:38:00 - Writing [{id=142392599511084, type=Cognitive Status, rank=2, text=test, patient=142305749958657, created_date (truncated)...]
+2024-05-30 01:38:00 - Completed 200 OK
+2024-05-30 01:38:17 - GET "/elation/patient-histories", parameters={}
+2024-05-30 01:38:17 - Mapped to com.valhalla.ehrplugin.elation.controller.PatientHistoryController#getAllPatientHistories()
+2024-05-30 01:38:17 - Received request to get patient history.
+2024-05-30 01:38:17 - Received request to fetch patient histories. Authorization token: Bearer eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU40anpYYkdScFZva3VFIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm80WjU5YzFEUFB5c2pnT1lJV0ZlN2VqWmRobmFuU2NDb0x0TlM2QldHdkUiLCJpc3MiOiJodHRwczovL3Nzby5zYW5kYm94LmVsYXRpb25lbXIuY29tL29hdXRoMi9hdXMyYzJ5aDE0RllpTjdzcTFkNyIsImF1ZCI6ImFwaTovL2FwcGxpY2F0aW9ucyIsImlhdCI6MTcxNzAxMDA5MCwiZXhwIjoxNzE3MDEzNjkwLCJjaWQiOiJ0aWxhMkZ5TW8ycVNsZHdGQ05ic3FCc1hKZlU4MVM4Z1ZCZFIzU2NGIiwic2NwIjpbImFwaXYyIl0sInN1YiI6InRpbGEyRnlNbzJxU2xkd0ZDTmJzcUJzWEpmVTgxUzhnVkJkUjNTY0YiLCJoc3AiOiJzYW5kYm94MSIsInByYWN0aWNlX2lkcyI6WzE0MDgwODI2NjQ0ODkwMF19.HCckJ39Py6Hk38zswiZzHJ56kOKGqL_Zsp_sdhWPfKcrlPq99pvCWtpKs3C396yJI5NIkE6omaPLa_q-NkxBldmS1OJS6_d0yMk2ccaheh7UH9e2DKs7BGm2LrosBPYPGul-BC94L8Cfka3QOGThmqc743s1KVah5AN4UZzk745EcwFOxiveFH9Rlx_OHfEk79Eqyyo_LAVzkZhLKzYRmiU0yxTe4j2l6Xtn1bKXK4C4ZKLfQL4ufTbAFAmVrZcs-xcmtkhZUXW_egBrZEjZW9kuZKEbvDA0avfWsOqWDpftLGk1qsauSYr25Rr52aXJHqlkQppU0hpbmdmgOKFslw
+2024-05-30 01:38:18 - Reading to [java.lang.Object]
+2024-05-30 01:38:18 - Received response from API with status code: 200 - 200 OK
+2024-05-30 01:38:18 - Retrieved patient histories from the API.
+2024-05-30 01:38:18 - Retrieved patient history successfully.
+2024-05-30 01:38:18 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30 01:38:18 - Writing [{count=3817, next=https://sandbox.elationemr.com/api/2.0/histories?limit=100&offset=100, previous=nu (truncated)...]
+2024-05-30 01:38:18 - Completed 200 OK
+2024-05-30 01:38:32 - DELETE "/elation/patient-histories/142392599511084", parameters={}
+2024-05-30 01:38:32 - Mapped to com.valhalla.ehrplugin.elation.controller.PatientHistoryController#deletePatientHistory(Long)
+2024-05-30 01:38:32 - Deleting patient history with ID: 142392599511084
+2024-05-30 01:38:32 - Received request to delete patient history with ID 142392599511084. Authorization token: Bearer eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU40anpYYkdScFZva3VFIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm80WjU5YzFEUFB5c2pnT1lJV0ZlN2VqWmRobmFuU2NDb0x0TlM2QldHdkUiLCJpc3MiOiJodHRwczovL3Nzby5zYW5kYm94LmVsYXRpb25lbXIuY29tL29hdXRoMi9hdXMyYzJ5aDE0RllpTjdzcTFkNyIsImF1ZCI6ImFwaTovL2FwcGxpY2F0aW9ucyIsImlhdCI6MTcxNzAxMDA5MCwiZXhwIjoxNzE3MDEzNjkwLCJjaWQiOiJ0aWxhMkZ5TW8ycVNsZHdGQ05ic3FCc1hKZlU4MVM4Z1ZCZFIzU2NGIiwic2NwIjpbImFwaXYyIl0sInN1YiI6InRpbGEyRnlNbzJxU2xkd0ZDTmJzcUJzWEpmVTgxUzhnVkJkUjNTY0YiLCJoc3AiOiJzYW5kYm94MSIsInByYWN0aWNlX2lkcyI6WzE0MDgwODI2NjQ0ODkwMF19.HCckJ39Py6Hk38zswiZzHJ56kOKGqL_Zsp_sdhWPfKcrlPq99pvCWtpKs3C396yJI5NIkE6omaPLa_q-NkxBldmS1OJS6_d0yMk2ccaheh7UH9e2DKs7BGm2LrosBPYPGul-BC94L8Cfka3QOGThmqc743s1KVah5AN4UZzk745EcwFOxiveFH9Rlx_OHfEk79Eqyyo_LAVzkZhLKzYRmiU0yxTe4j2l6Xtn1bKXK4C4ZKLfQL4ufTbAFAmVrZcs-xcmtkhZUXW_egBrZEjZW9kuZKEbvDA0avfWsOqWDpftLGk1qsauSYr25Rr52aXJHqlkQppU0hpbmdmgOKFslw
+2024-05-30 01:38:32 - Received response from API with status code: 204 - 204 NO_CONTENT
+2024-05-30 01:38:32 - Patient history deleted successfully with ID: 142392599511084
+2024-05-30 01:38:32 - Patient history not found with ID: 142392599511084
+2024-05-30 01:38:32 - Using 'application/octet-stream', given [*/*] and supported [*/*]
+2024-05-30 01:38:32 - Completed 404 NOT_FOUND
+2024-05-30 01:38:38 - GET "/elation/patient-histories", parameters={}
+2024-05-30 01:38:38 - Mapped to com.valhalla.ehrplugin.elation.controller.PatientHistoryController#getAllPatientHistories()
+2024-05-30 01:38:38 - Received request to get patient history.
+2024-05-30 01:38:38 - Received request to fetch patient histories. Authorization token: Bearer eyJraWQiOiJzM1lYUGdXekxmMWctMjluSkFfSjAtYWt3SzhmQU40anpYYkdScFZva3VFIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULm80WjU5YzFEUFB5c2pnT1lJV0ZlN2VqWmRobmFuU2NDb0x0TlM2QldHdkUiLCJpc3MiOiJodHRwczovL3Nzby5zYW5kYm94LmVsYXRpb25lbXIuY29tL29hdXRoMi9hdXMyYzJ5aDE0RllpTjdzcTFkNyIsImF1ZCI6ImFwaTovL2FwcGxpY2F0aW9ucyIsImlhdCI6MTcxNzAxMDA5MCwiZXhwIjoxNzE3MDEzNjkwLCJjaWQiOiJ0aWxhMkZ5TW8ycVNsZHdGQ05ic3FCc1hKZlU4MVM4Z1ZCZFIzU2NGIiwic2NwIjpbImFwaXYyIl0sInN1YiI6InRpbGEyRnlNbzJxU2xkd0ZDTmJzcUJzWEpmVTgxUzhnVkJkUjNTY0YiLCJoc3AiOiJzYW5kYm94MSIsInByYWN0aWNlX2lkcyI6WzE0MDgwODI2NjQ0ODkwMF19.HCckJ39Py6Hk38zswiZzHJ56kOKGqL_Zsp_sdhWPfKcrlPq99pvCWtpKs3C396yJI5NIkE6omaPLa_q-NkxBldmS1OJS6_d0yMk2ccaheh7UH9e2DKs7BGm2LrosBPYPGul-BC94L8Cfka3QOGThmqc743s1KVah5AN4UZzk745EcwFOxiveFH9Rlx_OHfEk79Eqyyo_LAVzkZhLKzYRmiU0yxTe4j2l6Xtn1bKXK4C4ZKLfQL4ufTbAFAmVrZcs-xcmtkhZUXW_egBrZEjZW9kuZKEbvDA0avfWsOqWDpftLGk1qsauSYr25Rr52aXJHqlkQppU0hpbmdmgOKFslw
+2024-05-30 01:38:38 - Reading to [java.lang.Object]
+2024-05-30 01:38:38 - Received response from API with status code: 200 - 200 OK
+2024-05-30 01:38:38 - Retrieved patient histories from the API.
+2024-05-30 01:38:38 - Retrieved patient history successfully.
+2024-05-30 01:38:38 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-05-30 01:38:38 - Writing [{count=3816, next=https://sandbox.elationemr.com/api/2.0/histories?limit=100&offset=100, previous=nu (truncated)...]
+2024-05-30 01:38:38 - Completed 200 OK

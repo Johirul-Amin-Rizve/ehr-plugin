@@ -3,6 +3,7 @@ package com.valhalla.ehrplugin.elation.service.impl;
 import com.valhalla.ehrplugin.elation.dto.patientHistoryDto.PatientHistoryRequest;
 import com.valhalla.ehrplugin.elation.service.PatientHistoryService;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,22 +11,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.*;
 
 
 @Service
+@RequiredArgsConstructor
 public class PatientHistoryServiceImpl implements PatientHistoryService {
 
     private static final Logger logger = LoggerFactory.getLogger(PatientHistoryServiceImpl.class);
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
-    private HttpServletRequest request;
+    private final HttpServletRequest request;
+    private final RestClient restClient;
 
     @Value("${elation.api.baseurl}")
     private String baseUrl;
@@ -35,19 +31,13 @@ public class PatientHistoryServiceImpl implements PatientHistoryService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to fetch patient histories. Authorization token: {}", authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-
-        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/histories/",
-                    HttpMethod.GET,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.get()
+                    .uri(baseUrl + "/histories")
+                    .accept(MediaType.APPLICATION_JSON)
+                    .header("Authorization", authorizationToken)
+                    .retrieve()
+                    .toEntity(Object.class);
 
             int statusCodeValue = response.getStatusCodeValue();
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
@@ -72,20 +62,15 @@ public class PatientHistoryServiceImpl implements PatientHistoryService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to create patient history: {}", patientHistoryRequest);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-        headers.set("Content-Type", "application/json");
-
-        HttpEntity<PatientHistoryRequest> requestEntity = new HttpEntity<>(patientHistoryRequest, headers);
-
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(
-                    baseUrl + "/histories/",
-                    HttpMethod.POST,
-                    requestEntity,
-                    Object.class
-            );
+            ResponseEntity<Object> response = restClient.post()
+                    .uri(baseUrl + "/histories/")
+                    .accept(MediaType.APPLICATION_JSON)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .header("Authorization", authorizationToken)
+                    .body(patientHistoryRequest)
+                    .retrieve()
+                    .toEntity(Object.class);
 
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
             logger.info("Received response from API with status code: {}", statusCode);
@@ -112,19 +97,12 @@ public class PatientHistoryServiceImpl implements PatientHistoryService {
         String authorizationToken = request.getHeader("Authorization");
         logger.info("Received request to delete patient history with ID {}. Authorization token: {}", id, authorizationToken);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationToken);
-        headers.set("accept", "application/json");
-
-        HttpEntity<?> requestEntity = new HttpEntity<>(headers);
-
         try {
-            ResponseEntity<Void> response = restTemplate.exchange(
-                    baseUrl + "/histories/" + id,
-                    HttpMethod.DELETE,
-                    requestEntity,
-                    Void.class
-            );
+            ResponseEntity<Void> response = restClient.delete()
+                    .uri(baseUrl + "/histories/" + id)
+                    .header("Authorization", authorizationToken)
+                    .retrieve()
+                    .toEntity(Void.class);
 
             int statusCodeValue = response.getStatusCodeValue();
             HttpStatus statusCode = (HttpStatus) response.getStatusCode();
