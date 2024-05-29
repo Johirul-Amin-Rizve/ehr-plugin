@@ -16,8 +16,8 @@ public class Patient {
     private String pronouns;
     private String sex;
     private String sexual_orientation;
-    private int primary_physician;
-    private int caregiver_practice;
+    private Long primary_physician;
+    private Long caregiver_practice;
     private String dob;
     private String ssn;
     private String race;
