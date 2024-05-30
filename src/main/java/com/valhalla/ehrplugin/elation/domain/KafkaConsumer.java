@@ -12,6 +12,8 @@ public class KafkaConsumer {
     @Column(name="group_name", length=50, nullable=false, unique=false)
     private String groupName;
 
+    @Column(name="group", length=50, nullable=false, unique=false)
+    private String gr;
     @Column(name="topic_name", length=50, nullable=false, unique=false)
     private String topicName;
 

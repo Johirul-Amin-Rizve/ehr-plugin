@@ -5692,3 +5692,46 @@ java.lang.NullPointerException: value
 2024-05-30 01:38:38 - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2024-05-30 01:38:38 - Writing [{count=3816, next=https://sandbox.elationemr.com/api/2.0/histories?limit=100&offset=100, previous=nu (truncated)...]
 2024-05-30 01:38:38 - Completed 200 OK
+2024-05-30 01:45:56 - [Consumer clientId=consumer-group1-1, groupId=group1] Node -1 disconnected.
+2024-05-30 01:45:56 - [Consumer clientId=consumer-group2-2, groupId=group2] Node -1 disconnected.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Node 2147482646 disconnected.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Group coordinator localhost:9092 (id: 2147482646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Node 2147482646 disconnected.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Node 1001 disconnected.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Cancelled in-flight FETCH request with correlation id 2223 due to node 1001 being disconnected (elapsed time since creation: 155ms, elapsed time since send: 155ms, request timeout: 30000ms)
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Group coordinator localhost:9092 (id: 2147482646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Error sending fetch request (sessionId=1626035252, epoch=1894) to node 1001:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Node 1001 disconnected.
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Cancelled in-flight FETCH request with correlation id 2223 due to node 1001 being disconnected (elapsed time since creation: 160ms, elapsed time since send: 160ms, request timeout: 30000ms)
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Cancelled in-flight METADATA request with correlation id 2224 due to node 1001 being disconnected (elapsed time since creation: 60ms, elapsed time since send: 60ms, request timeout: 30000ms)
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Cancelled in-flight FIND_COORDINATOR request with correlation id 2225 due to node 1001 being disconnected (elapsed time since creation: 15ms, elapsed time since send: 17ms, request timeout: 30000ms)
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Error sending fetch request (sessionId=1312216615, epoch=1894) to node 1001:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Revoke previously assigned partitions topic1-0
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Revoke previously assigned partitions topic2-0
+2024-05-30 01:52:49 - group2: partitions revoked: [topic2-0]
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - group1: partitions revoked: [topic1-0]
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Unsubscribed all topics or patterns and assigned partitions
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group1-1, groupId=group1] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - Metrics scheduler closed
+2024-05-30 01:52:49 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:52:49 - Metrics reporters closed
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - [Consumer clientId=consumer-group2-2, groupId=group2] Request joining group due to: consumer pro-actively leaving the group
+2024-05-30 01:52:49 - Metrics scheduler closed
+2024-05-30 01:52:49 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-05-30 01:52:49 - Metrics reporters closed
+2024-05-30 01:52:49 - App info kafka.consumer for consumer-group2-2 unregistered
+2024-05-30 01:52:49 - group2: Consumer stopped
+2024-05-30 01:52:49 - App info kafka.consumer for consumer-group1-1 unregistered
+2024-05-30 01:52:49 - group1: Consumer stopped
+2024-05-30 01:52:49 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30 01:52:49 - HikariPool-1 - Shutdown initiated...
+2024-05-30 01:52:49 - HikariPool-1 - Shutdown completed.
